@@ -1,0 +1,26 @@
+/*
+------------------------
+Header
+------------------------
+*/
+
+.search-wrapper {
+    text-align: center;
+}
+
+.search-wrapper > .input-group {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 60%;
+}
+
+/*
+------------------------
+Poster
+------------------------
+*/
+
+.row-spacer {
+    margin-bottom: 40px;
+}
