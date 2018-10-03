@@ -5,9 +5,19 @@ ul {
   background-color: #00000000 !important;
 }
 
+#secret-text {
+  left: 0;
+}
+#files-text {
+  left: 0;
+  top: 0;
+}
+
 .main-title {
   font-family: "Roboto Mono", sans-serif;
   font-size: 60px;
+  transition: all 0.5s ease;
+  position: relative;
 }
 
 .overlay {
@@ -30,6 +40,8 @@ ul {
   z-index: 2;
   color: #ffffff;
   width: 50%;
+  left: 0;
+  transition: all 0.5s ease;
 }
 
 #search-box {
@@ -37,10 +49,22 @@ ul {
   height: 50px;
   width: 50%;
   z-index: 2;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease;
 }
 #search-btn {
+  background-color: #ed1d24;
   position: relative;
   z-index: 2;
+  border: none;
+  border-radius: 0;
+  /* padding: 12px; */
+  top: 0;
+  height: 48px;
+  top: -3px;
+  left: -5px;
+  transition: all 0.5s ease;
 }
 
 .checkbox {

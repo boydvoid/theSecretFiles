@@ -38,16 +38,15 @@
   <!-- overlay -->
   <div class="overlay"></div>
   <!-- video -->
-  <video autoplay muted loop id="myVideo">
+  <!-- <video autoplay muted loop id="myVideo">
       <source src="./video/civilwar.mp4" type="video/mp4">
-    </video>
+    </video> -->
   <!-- Content -->
-  <div class="container">
+  <div class="container" id="main-container">
     <div class="row" id="top-row">
 
       <div class="col-xl-12">
-        <h2 class="main-title">The Secret </h2> <h2 class="main-title">Files</h2>
-        <hr>
+        <h2 class="main-title" id="secret-text">The Secret </h2> <h2 class="main-title" id="files-text">Files</h2>
       </div>
     </div>
     <div class="row">
@@ -58,16 +57,9 @@
           eaque.</p>
 
         <form action="">
-          <input type="text" id="search-box">
+          <input type="text" id="search-box" placeholder="Robert Downey Jr.">
           <button class="btn btn-primary"id="search-btn">Search</button>
-          <ul>
-            <li class='checkbox-li'> 
-              <input type="checkbox" name="comics" id="" class="checkbox"> <span class="checkbox-text">Comics</span> 
-            </li>
-            <li class='checkbox-li'>
-              <input type="checkbox" name="movies" id="" class="checkbox"> <span class="checkbox-text">Movies</span>
-            </li>
-          </ul>
+         
             
         </form>
       </div>
