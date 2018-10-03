@@ -96,6 +96,6 @@ ul {
 
 #search-content-div {
   position: relative;
-  right: -10px;
+  right: -200vh;
   transition: all 0.5s ease;
 }
