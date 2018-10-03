@@ -29,6 +29,11 @@
   width: 50%;
 }
 
+#search-box {
+  position: relative;
+  height: 50px;
+  width: 50%;
+}
 #myVideo {
   position: fixed;
   right: 0;
@@ -36,5 +41,3 @@
   min-width: 100%;
   min-height: 100%;
 }
-
-
