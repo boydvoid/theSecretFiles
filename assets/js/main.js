@@ -64,6 +64,7 @@ $("#search-box").change(function() {
   let imageSize = "/portrait_medium.";
   let extension;
   let imgTag = $("<img>");
+  $("#display-images").empty();
   $.ajax({
     url:
       "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=" +
