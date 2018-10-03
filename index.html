@@ -31,24 +31,30 @@
     <a class="navbar-brand ml-auto" href="#">Pause Video</a>
   </nav>
 
+  <!-- overlay -->
+  <div class="overlay"></div>
+  <!-- video -->
+  <video autoplay muted loop id="myVideo">
+      <source src="./video/civilwar.mp4" type="video/mp4">
+    </video>
   <!-- Content -->
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container">
+    <div class="row" id="top-row">
 
       <div class="col-xl-12">
-        <h2>The Secret Files</h2>
+        <h2 class="main-title">The Secret </h2> <h2 class="main-title">Files</h2>
         <hr>
       </div>
     </div>
     <div class="row">
       <div class="col-xl-12">
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ratione quod alias consequuntur praesentium
+        <p id= "description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ratione quod alias consequuntur praesentium
           unde quisquam excepturi est minus sunt doloribus ipsum animi odit, soluta consequatur quas optio? Numquam,
           eaque.</p>
 
         <form action="">
-          <input type="text">
+          <input type="text" id="search-box">
           <button>Search</button>
           <div>
             <input type="checkbox" name="comics" id=""> Comics

@@ -1,26 +1,40 @@
-/*
-------------------------
-Header
-------------------------
-*/
-
-.search-wrapper {
-    text-align: center;
+.navbar {
+  background-color: #00000000 !important;
 }
 
-.search-wrapper > .input-group {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    width: 60%;
+.main-title {
+  font-family: "Hack", sans-serif;
+  font-size: 60px;
 }
 
-/*
-------------------------
-Poster
-------------------------
-*/
-
-.row-spacer {
-    margin-bottom: 40px;
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000052;
+  position: fixed;
+  z-index: 1;
+  top: 0;
 }
+
+#top-row {
+  position: relative;
+  z-index: 2;
+  margin-top: 30vh;
+  color: #ffffff;
+}
+#description {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  width: 50%;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
