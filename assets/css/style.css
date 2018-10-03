@@ -1,9 +1,12 @@
+ul {
+  list-style-type: none;
+}
 .navbar {
   background-color: #00000000 !important;
 }
 
 .main-title {
-  font-family: "Hack", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-size: 60px;
 }
 
@@ -33,6 +36,29 @@
   position: relative;
   height: 50px;
   width: 50%;
+  z-index: 2;
+}
+#search-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.checkbox {
+  position: relative;
+  z-index: 2;
+}
+.checkbox-li {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  margin: 10px;
+  background-color: #ed1d24;
+  float: left;
+}
+.checkbox-text {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
 }
 #myVideo {
   position: fixed;

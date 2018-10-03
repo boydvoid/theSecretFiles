@@ -19,6 +19,10 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
   <title>The Secret Files</title>
 
 </head>
@@ -55,13 +59,16 @@
 
         <form action="">
           <input type="text" id="search-box">
-          <button>Search</button>
-          <div>
-            <input type="checkbox" name="comics" id=""> Comics
-          </div>
-          <div>
-            <input type="checkbox" name="movies" id=""> Movies
-          </div>
+          <button class="btn btn-primary"id="search-btn">Search</button>
+          <ul>
+            <li class='checkbox-li'> 
+              <input type="checkbox" name="comics" id="" class="checkbox"> <span class="checkbox-text">Comics</span> 
+            </li>
+            <li class='checkbox-li'>
+              <input type="checkbox" name="movies" id="" class="checkbox"> <span class="checkbox-text">Movies</span>
+            </li>
+          </ul>
+            
         </form>
       </div>
     </div>
