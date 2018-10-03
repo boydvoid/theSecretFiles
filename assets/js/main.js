@@ -19,6 +19,8 @@ $("#search-box").focus(function() {
   $("#description").css({
     top: "-30vh"
   });
+
+  //search content div
 });
 
 //search bar lose focus
