@@ -1,81 +1,80 @@
 <!DOCTYPE html>
 <html lang = "en">
+
 <head>
 	<meta charset = "UTF-8">
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 	<meta http-equiv = "X-UA-Compatible" content = "ie=edge">
-
+	
 	<!-- Bootstrap -->
 	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-			integrity = "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin = "anonymous">
+			integrity = "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin = "anonymous">
 	<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-			integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin = "anonymous"></script>
-
+			integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin = "anonymous"></script>
+	
 	<!-- jQuery -->
 	<script src = "https://code.jquery.com/jquery-3.3.1.min.js" integrity = "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			crossorigin = "anonymous"></script>
-
+	
 	<!-- Custom CSS -->
 	<link rel = "stylesheet" href = "assets/css/style.css">
-
+	
+	<!-- fonts -->
+	<link href = "https://fonts.googleapis.com/css?family=Roboto+Mono" rel = "stylesheet">
+	
 	<title>The Secret Files</title>
 
 </head>
+
 <body>
 
 <!-- Header -->
+<!-- As a link -->
+<nav class = "navbar navbar-light bg-light">
+	<a class = "navbar-brand ml-auto" href = "#">Pause Video</a>
+</nav>
 
-<section>
-	<div class = "jumbotron">
-		<div class = "search-wrapper">
-
-			<h1 class = "display-4">The Secret Files</h1>
-			<div class = "input-group mb-3">
-				<input type = "text" class = "form-control" placeholder = "Input Movie, Character or Actor">
-			</div>
-
+<!-- overlay -->
+<div class = "overlay"></div>
+<!-- video -->
+<!-- <video autoplay muted loop id="myVideo">
+		<source src="./video/civilwar.mp4" type="video/mp4">
+	</video> -->
+<!-- Content -->
+<div class = "container" id = "main-container">
+	<div class = "row" id = "top-row">
+		
+		<div class = "col-xl-12">
+			<h2 class = "main-title" id = "secret-text">The Secret </h2>
+			<h2 class = "main-title" id = "files-text">Files</h2>
 		</div>
 	</div>
-</section>
-
-
-<!-- Content -->
-
-<div class = "container">
 	<div class = "row">
-
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
+		<div class = "col-xl-12">
+			
+			<p id = "description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ratione quod alias consequuntur praesentium
+				unde quisquam excepturi est minus sunt doloribus ipsum animi odit, soluta consequatur quas optio? Numquam,
+				eaque.
+			</p>
+			<input type = "text" id = "search-box" placeholder = "Robert Downey Jr.">
 		</div>
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-		<div class = "col-xl-3 row-spacer">
-			<img src = "assets/images/placeholder.jpg" alt = "Placeholder" width = "250px">
-		</div>
-
 	</div>
 </div>
 
+<!-- Content Div -->
+<div class = "container" id = "search-content-div">
+	<div class = "row">
+		
+		<div class = "flex-display scrollbar" id = "display-images"></div>
+		
+	</div>
+</div>
 
 <!-- Custom JS -->
 <script src = "assets/js/main.js"></script>
 
 </body>
+
 </html>
