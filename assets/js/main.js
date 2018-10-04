@@ -63,11 +63,10 @@ $("#search-box").change(function() {
   let search = $("#search-box").val();
   let imageSize = "/portrait_medium.";
   let extension;
-  let imgTag = $("<img>");
   $("#display-images").empty();
   $.ajax({
     url:
-      "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=" +
+      "https://gateway.marvel.com:443/v1/public/characters?ts=1&nameStartsWith=" +
       search +
       "&apikey=b13e13a4abc06dc9ba221862c9e4d24d&hash=d7d8f997d87b284626fc0dd41199055a",
     method: "GET"
@@ -75,9 +74,16 @@ $("#search-box").change(function() {
     console.log(results);
 
     console.log(results.data.results[0].thumbnail.path);
-    extension = results.data.results[0].thumbnail.extension;
+    for (let i = 0; i < results.data.results.length; i++) {
+      extension = results.data.results[i].thumbnail.extension;
 
-    imgTag.attr("src", results.data.results[0].thumbnail.path + imageSize + extension);
-    $("#display-images").append(imgTag);
+      let card = $('<div>');
+
+      let imgTag = $("<img>");
+      
+      imgTag.attr("class", 'card-img-top');
+      imgTag.attr("src", results.data.results[i].thumbnail.path + imageSize + extension);
+      $("#display-images").append(imgTag);
+    }
   });
 });
