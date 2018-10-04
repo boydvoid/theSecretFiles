@@ -1,89 +1,104 @@
 //search bar on focus
-$("#search-box").focus(function() {
-  //search box css
-  //description text
-  $("#search-box").css({
-    top: "-28vh"
-  });
+$("#search-box").focus(function () {
+	//search box css
+	//description text
+	$("#search-box").css({
+		top: "-28vh"
+	});
 
-  // THE SECRET FILES TITLE
-  $("#files-text").css({
-    left: "42vh",
-    top: "-29.5vh"
-  });
-  $("#secret-text").css({
-    top: "-21vh"
-  });
+	// THE SECRET FILES TITLE
+	$("#files-text").css({
+		left: "42vh",
+		top: "-29.5vh"
+	});
+	$("#secret-text").css({
+		top: "-21vh"
+	});
 
-  //description text
-  $("#description").css({
-    top: "-30vh"
-  });
+	//description text
+	$("#description").css({
+		top: "-30vh"
+	});
 
-  //search content div
+	//search content div
 
-  $("#search-content-div").css({
-    right: "0vh"
-  });
+	$("#search-content-div").css({
+		right: "0vh"
+	});
 });
 
 //search bar lose focus
-$("#search-box").focusout(function() {
-  console.log($("#search-box").val());
-  if ($("#search-box").val() === "") {
-    //search box css
-    $("#search-box").css({
-      top: "0"
-    });
+$("#search-box").focusout(function () {
+	console.log($("#search-box").val());
+	if ($("#search-box").val() === "") {
+		//search box css
+		$("#search-box").css({
+			top: "0"
+		});
 
-    //THE SECRET FILES TITLE
-    $("#files-text").css({
-      left: "0",
-      top: "0"
-    });
-    $("#secret-text").css({
-      top: "0"
-    });
+		//THE SECRET FILES TITLE
+		$("#files-text").css({
+			left: "0",
+			top: "0"
+		});
+		$("#secret-text").css({
+			top: "0"
+		});
 
-    //description text
-    $("#description").css({
-      top: "0"
-    });
+		//description text
+		$("#description").css({
+			top: "0"
+		});
 
-    //search content
-    $("#search-content-div").css({
-      right: "-200vh"
-    });
-  }
+		//search content
+		$("#search-content-div").css({
+			right: "-200vh"
+		});
+	}
 });
 
 //api testing
 
-$("#search-box").change(function() {
-  let search = $("#search-box").val();
-  let imageSize = "/portrait_medium.";
-  let extension;
-  $("#display-images").empty();
-  $.ajax({
-    url:
-      "https://gateway.marvel.com:443/v1/public/characters?ts=1&nameStartsWith=" +
-      search +
-      "&apikey=b13e13a4abc06dc9ba221862c9e4d24d&hash=d7d8f997d87b284626fc0dd41199055a",
-    method: "GET"
-  }).then(function(results) {
-    console.log(results);
+$("#search-box").change(function () {
 
-    console.log(results.data.results[0].thumbnail.path);
-    for (let i = 0; i < results.data.results.length; i++) {
-      extension = results.data.results[i].thumbnail.extension;
+	let searchInput = $("#search-box").val();
+	let imageSize = "/portrait_medium.";
+	let extension;
 
-      let card = $('<div>');
+	let apiKey = "22af0a1916961ac91e95f4798017455e";
+	let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
+	let characterURL = marvelURL + "?nameStartsWith=" + searchInput + "&apikey=" + apiKey;
+	let comicsURL = marvelURL + searchInput + "/comics?formatType=comic&noVariants=true&hasDigitalIssue=true&apikey=" + apiKey;
+	let eventsURL = marvelURL + searchInput + "/events?limit=28&apikey=" + apiKey;
 
-      let imgTag = $("<img>");
-      
-      imgTag.attr("class", 'card-img-top');
-      imgTag.attr("src", results.data.results[i].thumbnail.path + imageSize + extension);
-      $("#display-images").append(imgTag);
-    }
-  });
+	$("#display-images").empty();
+	$.ajax({
+
+		url: characterURL,
+		method: "GET"
+
+	}).then(function (results) {
+
+		console.log(results);
+
+		for (let i = 0; i < results.data.results.length; i++) {
+
+			let characterWrapper = $("<div>");
+			let characterName = $('<p>');
+			let characterImg = $("<img>");
+
+			extension = "." + results.data.results[i].thumbnail.extension;
+
+			characterName.attr("class", "results-character-name");
+			characterName.text(results.data.results[i].name);
+
+			characterImg.attr("class", 'image-container');
+			characterImg.attr("src", results.data.results[i].thumbnail.path + extension);
+
+			characterWrapper.append(characterName, characterImg);
+			$("#display-images").append(characterWrapper);
+
+		}
+
+	});
 });

@@ -111,3 +111,27 @@ Search Content
   right: -200vh;
   transition: all 0.5s ease;
 }
+
+.flex-display {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.flex-display:hover {
+    overflow: auto;
+}
+
+.image-container {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    height: 250px;
+    margin-right: 20px;
+    width: 250px;
+}
+
+.results-character-name {
+    font-size: 14px;
+}
+
