@@ -82,6 +82,7 @@ $("#search-box").change(function() {
       let characterName = $("<p>");
       let characterImg = $("<img>");
 
+      characterWrapper.attr("class", "images");
       extension = "." + results.data.results[i].thumbnail.extension;
 
       characterName.attr("class", "results-character-name");
@@ -93,5 +94,9 @@ $("#search-box").change(function() {
       characterWrapper.append(characterName, characterImg);
       $("#display-images").append(characterWrapper);
     }
+
+    setTimeout(function() {
+      $(".images").css({ opacity: "1" });
+    }, 1000);
   });
 });
