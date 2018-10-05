@@ -1,5 +1,15 @@
 $(document).ready(function() {
-  let videos = ["antman.mp4", "civilwar.mp4", "Deadpool.mp4", "hulk.mp4", "panther.mp4", "strange.mp4"];
+  let videos = [
+    "antman.mp4",
+    "civilwar.mp4",
+    "Deadpool.mp4",
+    "hulk.mp4",
+    "panther.mp4",
+    "strange.mp4",
+    "scarlett.mp4",
+    "spiderman.mp4",
+    "thanos.mp4"
+  ];
 
   let displayArray = shuffle(videos);
   let i = 0;
