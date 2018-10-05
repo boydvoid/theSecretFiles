@@ -62,20 +62,22 @@ $("#search-box").focusout(function () {
 $("#search-box").change(function () {
 
 	let searchInput = $("#search-box").val();
-	let imageSize = "/portrait_medium.";
 	let extension;
 
 	let apiKey = "22af0a1916961ac91e95f4798017455e";
 	let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
-	let characterURL = marvelURL + "?nameStartsWith=" + searchInput + "&apikey=" + apiKey;
+	let resultsLimit = "50";
+	let characterURL = marvelURL + "?nameStartsWith=" + searchInput + "&limit=" + resultsLimit + "&apikey=" + apiKey;
 	let comicsURL = marvelURL + searchInput + "/comics?formatType=comic&noVariants=true&hasDigitalIssue=true&apikey=" + apiKey;
-	let eventsURL = marvelURL + searchInput + "/events?limit=28&apikey=" + apiKey;
+	let eventsURL = marvelURL + searchInput + "/events?limit=" + resultsLimit + "&apikey=" + apiKey;
 
 	$("#display-images").empty();
+
 	$.ajax({
 
 		url: characterURL,
-		method: "GET"
+		method: "GET",
+		cache: "true"
 
 	}).then(function (results) {
 
@@ -93,6 +95,7 @@ $("#search-box").change(function () {
 			characterName.text(results.data.results[i].name);
 
 			characterImg.attr("class", 'image-container');
+			characterImg.attr("character-id", results.data.results[i].id);
 			characterImg.attr("src", results.data.results[i].thumbnail.path + extension);
 
 			characterWrapper.append(characterName, characterImg);
