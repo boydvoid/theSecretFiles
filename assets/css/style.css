@@ -1,0 +1,137 @@
+/*
+--------------
+TAGS
+--------------
+*/
+
+ul {
+  list-style-type: none;
+}
+
+/*
+--------------
+Navbar
+--------------
+*/
+.navbar {
+  background-color: #00000000 !important;
+}
+
+/*
+--------------
+Overlay
+--------------
+*/
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000052;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+/*
+--------------
+Main Container
+--------------
+*/
+.main-title {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 60px;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+#secret-text {
+  left: 0;
+  top: 0;
+}
+#files-text {
+  left: 0;
+  top: 0;
+}
+
+#top-row {
+  position: relative;
+  z-index: 2;
+  margin-top: 30vh;
+  color: #ffffff;
+}
+#description {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  width: 50%;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+#search-box {
+  position: relative;
+  height: 50px;
+  width: 50%;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease;
+}
+#search-btn {
+  background-color: #ed1d24;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  /* padding: 12px; */
+  top: 0;
+  height: 48px;
+  top: -3px;
+  left: -90vh;
+  transition: all 0.5s ease;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*
+--------------
+Search Content
+--------------
+*/
+
+#search-content-div {
+  position: relative;
+  right: -200vh;
+  transition: all 0.5s ease;
+}
+
+.flex-display {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.flex-display:hover {
+    overflow: auto;
+}
+
+.image-container {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    height: 250px;
+    margin-right: 20px;
+    width: 250px;
+}
+
+.results-character-name {
+    font-size: 14px;
+}
+
