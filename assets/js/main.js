@@ -20,8 +20,16 @@ $(document).ready(function() {
   document.getElementById("myVideo").addEventListener(
     "ended",
     function() {
-      i++;
-      $("#myVideo").attr("src", "./video/" + displayArray[i]);
+      if (i >= displayArray.length) {
+        console.log("reset");
+
+        i = 0;
+        displayArray = shuffle(videos);
+        $("#myVideo").attr("src", "./video/" + displayArray[i]);
+      } else {
+        i++;
+        $("#myVideo").attr("src", "./video/" + displayArray[i]);
+      }
     },
     false
   );
