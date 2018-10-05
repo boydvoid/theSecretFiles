@@ -110,7 +110,7 @@ Search Content
 */
 
 #search-content-div {
-  bottom: 200px;
+  bottom: 70px;
   position: relative;
   right: -200vh;
   transition: all 0.5s ease;
@@ -128,8 +128,8 @@ Search Content
 }
 
 .image-container {
-  border-top-left-radius: calc(.25rem - 1px);
-  border-top-right-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
   height: 250px;
   margin-right: 20px;
   width: 250px;
@@ -142,4 +142,3 @@ Search Content
   white-space: nowrap;
   width: 230px;
 }
-

@@ -3,13 +3,12 @@ $("#search-box").focus(function() {
   //search box css
   //description text
   $("#search-box").css({
-    top: "-28vh"
+    top: "-21vh"
   });
 
   // THE SECRET FILES TITLE
   $("#files-text").css({
-    left: "42vh",
-    top: "-29.5vh"
+    top: "-21vh"
   });
   $("#secret-text").css({
     top: "-21vh"
@@ -17,7 +16,7 @@ $("#search-box").focus(function() {
 
   //description text
   $("#description").css({
-    top: "-30vh"
+    top: "-21vh"
   });
 
   //search content div
