@@ -76,6 +76,7 @@ $("#search-box").change(function() {
     url: characterURL,
     method: "GET"
   }).then(function(results) {
+
     console.log(results);
 
     for (let i = 0; i < results.data.results.length; i++) {
