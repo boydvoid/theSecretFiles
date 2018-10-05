@@ -58,53 +58,103 @@ $("#search-box").focusout(function () {
 });
 
 // Global Variables
+let hash = "d7d8f997d87b284626fc0dd41199055a";
+let apiKey = "b13e13a4abc06dc9ba221862c9e4d24d";
+let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
+let searchLimit = 50;
+let extension;
 
+let characterID;
+let apiURL;
+let urlType;
 
-//api testing
+let comicsURL = marvelURL + characterID + "/comics?formatType=comic&noVariants=true&hasDigitalIssue=true&apikey=" + apiKey;
+
+// API Calls
 
 $("#search-box").change(function () {
 
 	let searchInput = $("#search-box").val();
-	let extension;
-	let hash = "d7d8f997d87b284626fc0dd41199055a";
-	let apiKey = "b13e13a4abc06dc9ba221862c9e4d24d";
-	let characterID;
-	let marvelURL = "https://gateway.marvel.com:443/v1/public/characters?ts=1";
-	let characterURL = marvelURL + "&nameStartsWith=" + searchInput + "&apikey=" + apiKey + "&hash=" + hash;
-	let comicsURL = marvelURL + characterID + "/comics?formatType=comic&noVariants=true&hasDigitalIssue=true&apikey=" + apiKey;
-	let eventsURL = marvelURL + characterID + "/events?limit=28&apikey=" + apiKey;
 
+	apiURL = marvelURL + "?ts=1&nameStartsWith=" + searchInput + "&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash;
+	urlType = "Character";
 	$("#display-images").empty();
+	getAPIData();
+
+});
+
+$(document).on("click", ".image-container", function () {
+
+	characterID = $(this).attr("character-id");
+	getEventData();
+
+});
+
+function getEventData() {
+
+	apiURL = marvelURL + "/" + characterID + "/events?ts=1&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash;
+	urlType = "Event";
+	$("#event-images").empty();
+	getAPIData();
+
+}
+
+function getAPIData() {
+
+	console.log(apiURL);
+	console.log(urlType);
+
 	$.ajax({
-		url: characterURL,
+
+		url: apiURL,
 		method: "GET"
+
 	}).then(function (results) {
 
 		console.log(results);
 
 		for (let i = 0; i < results.data.results.length; i++) {
-			let characterWrapper = $("<div>");
-			let characterName = $("<p>");
-			let characterImg = $("<img>");
+
+			let typeWrapper = $("<div>");
+			let typeName = $("<p>");
+			let typeImage = $("<img>");
 
 			extension = "." + results.data.results[i].thumbnail.extension;
 
-			characterName.attr("class", "results-character-name");
+			typeImage.attr("class", "image-container");
+			typeImage.attr("src", results.data.results[i].thumbnail.path + extension);
 
-			characterName.text(results.data.results[i].name);
+			if (urlType === "Character") {
 
-			characterImg.attr("class", "image-container");
-			characterImg.attr("character-id", results.data.results[i].id);
-			characterImg.attr("src", results.data.results[i].thumbnail.path + extension);
+				typeName.attr("class", "character-name");
+				typeName.text(results.data.results[i].name);
+				typeImage.attr("character-id", results.data.results[i].id);
+				typeWrapper.append(typeName, typeImage);
+				$("#display-images").append(typeWrapper);
 
-			characterWrapper.append(characterName, characterImg);
-			$("#display-images").append(characterWrapper);
+			}
+
+			if (urlType === "Comic") {
+
+				typeName.attr("class", "comic-name");
+				typeName.text(results.data.results[i].title);
+				typeImage.attr("comic-id", results.data.results[i].id);
+				typeWrapper.append(typeName, typeImage);
+				$("#comic-images").append(typeWrapper);
+
+			}
+
+			if (urlType === "Event") {
+
+				typeName.attr("class", "event-name");
+				typeName.text(results.data.results[i].title);
+				typeImage.attr("event-id", results.data.results[i].id);
+				typeWrapper.append(typeName, typeImage);
+				$("#event-images").append(typeWrapper);
+
+			}
 		}
-	});
-});
+	})
+}
 
-$(document).on("click", ".image-container", function () {
-	characterID = $(this).attr("character-id");
-	console.log(characterID);
-});
 
