@@ -1,3 +1,30 @@
+$(document).ready(function() {
+  let videos = ["antman.mp4", "civilwar.mp4", "Deadpool.mp4", "hulk.mp4", "panther.mp4", "strange.mp4"];
+
+  let displayArray = shuffle(videos);
+  let i = 0;
+
+  $("#myVideo").attr("src", "./video/" + displayArray[i]);
+
+  //finsihed
+  document.getElementById("myVideo").addEventListener(
+    "ended",
+    function() {
+      i++;
+      $("#myVideo").attr("src", "./video/" + displayArray[i]);
+    },
+    false
+  );
+});
+
+//shuffle array
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 //search bar on focus
 $("#search-box").focus(function() {
   //search box css
