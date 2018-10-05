@@ -3,7 +3,9 @@
 TAGS
 --------------
 */
-
+body {
+  overflow: hidden;
+}
 ul {
   list-style-type: none;
 }
@@ -110,8 +112,12 @@ Search Content
 */
 
 #search-content-div {
-  bottom: 200px;
+  bottom: 110px;
+  background-color: #0000002b;
+  border: 3px solid red;
   position: relative;
+  padding: 25px;
+  min-height: 350px;
   right: -200vh;
   transition: all 0.5s ease;
 }
@@ -127,9 +133,13 @@ Search Content
   overflow: auto;
 }
 
+.images {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
 .image-container {
-  border-top-left-radius: calc(.25rem - 1px);
-  border-top-right-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
   height: 250px;
   margin-right: 20px;
   width: 250px;
@@ -141,5 +151,6 @@ Search Content
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 230px;
+  color: #ffffff;
+  font-size: 30px;
 }
-

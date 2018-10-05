@@ -1,15 +1,41 @@
+$(document).ready(function() {
+  let videos = ["antman.mp4", "civilwar.mp4", "Deadpool.mp4", "hulk.mp4", "panther.mp4", "strange.mp4"];
+
+  let displayArray = shuffle(videos);
+  let i = 0;
+
+  $("#myVideo").attr("src", "./video/" + displayArray[i]);
+
+  //finsihed
+  document.getElementById("myVideo").addEventListener(
+    "ended",
+    function() {
+      i++;
+      $("#myVideo").attr("src", "./video/" + displayArray[i]);
+    },
+    false
+  );
+});
+
+//shuffle array
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 //search bar on focus
 $("#search-box").focus(function() {
   //search box css
   //description text
   $("#search-box").css({
-    top: "-28vh"
+    top: "-21vh"
   });
 
   // THE SECRET FILES TITLE
   $("#files-text").css({
-    left: "42vh",
-    top: "-29.5vh"
+    top: "-21vh"
   });
   $("#secret-text").css({
     top: "-21vh"
@@ -17,7 +43,7 @@ $("#search-box").focus(function() {
 
   //description text
   $("#description").css({
-    top: "-30vh"
+    top: "-21vh"
   });
 
   //search content div
@@ -83,6 +109,7 @@ $("#search-box").change(function() {
       let characterName = $("<p>");
       let characterImg = $("<img>");
 
+      characterWrapper.attr("class", "images");
       extension = "." + results.data.results[i].thumbnail.extension;
 
       characterName.attr("class", "results-character-name");
@@ -94,5 +121,9 @@ $("#search-box").change(function() {
       characterWrapper.append(characterName, characterImg);
       $("#display-images").append(characterWrapper);
     }
+
+    setTimeout(function() {
+      $(".images").css({ opacity: "1" });
+    }, 1000);
   });
 });
