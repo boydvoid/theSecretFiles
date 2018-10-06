@@ -1,7 +1,6 @@
 $(document).ready(function() {
   let videos = [
     "antman.mp4",
-    "civilwar.mp4",
     "Deadpool.mp4",
     "hulk.mp4",
     "panther.mp4",
