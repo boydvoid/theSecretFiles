@@ -78,7 +78,7 @@ $("#search-box").change(function () {
 
 	apiURL = marvelURL + "?ts=1&nameStartsWith=" + searchInput + "&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash;
 	urlType = "Character";
-	$("#display-images").empty();
+	$("#character-images").empty();
 	getAPIData();
 
 });
@@ -106,6 +106,8 @@ function getAPIData() {
 
 	$.ajax({
 
+		async: true,
+		cache: true,
 		url: apiURL,
 		method: "GET"
 
@@ -130,7 +132,7 @@ function getAPIData() {
 				typeName.text(results.data.results[i].name);
 				typeImage.attr("character-id", results.data.results[i].id);
 				typeWrapper.append(typeName, typeImage);
-				$("#display-images").append(typeWrapper);
+				$("#character-images").append(typeWrapper);
 
 			}
 
@@ -156,5 +158,51 @@ function getAPIData() {
 		}
 	})
 }
+
+// Loading Animations
+
+$(document).ajaxStart(function(){
+
+	if (urlType === "Character") {
+
+		$("#character-images").text("Loading");
+
+	}
+
+	if (urlType === "Comic") {
+
+		$("#comic-images").text("Loading");
+
+	}
+
+	if (urlType === "Event") {
+
+		$("#event-images").text("Loading");
+
+	}
+
+});
+
+$(document).ajaxComplete(function(){
+
+	if (urlType === "Character") {
+
+		$("#character-images").text("");
+
+	}
+
+	if (urlType === "Comic") {
+
+		$("#comic-images").text("");
+
+	}
+
+	if (urlType === "Event") {
+
+		$("#event-images").text("");
+
+	}
+
+});
 
 

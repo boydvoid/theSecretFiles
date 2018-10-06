@@ -135,7 +135,7 @@ Search Content
   width: 250px;
 }
 
-.results-character-name {
+.character-name {
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
