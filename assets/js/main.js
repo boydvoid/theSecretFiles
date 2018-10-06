@@ -1,30 +1,76 @@
+$(document).ready(function() {
+  let videos = [
+    "antman.mp4",
+    "civilwar.mp4",
+    "Deadpool.mp4",
+    "hulk.mp4",
+    "panther.mp4",
+    "strange.mp4",
+    "scarlett.mp4",
+    "spiderman.mp4",
+    "thanos.mp4"
+  ];
+
+  let displayArray = shuffle(videos);
+  let i = 0;
+
+  $("#myVideo").attr("src", "./video/" + displayArray[i]);
+
+  //finsihed
+  document.getElementById("myVideo").addEventListener(
+    "ended",
+    function() {
+      if (i >= displayArray.length) {
+        console.log("reset");
+
+        i = 0;
+        displayArray = shuffle(videos);
+        $("#myVideo").attr("src", "./video/" + displayArray[i]);
+      } else {
+        i++;
+        $("#myVideo").attr("src", "./video/" + displayArray[i]);
+      }
+    },
+    false
+  );
+});
+
+//shuffle array
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 //search bar on focus
-$("#search-box").focus(function () {
-	//search box css
-	//description text
-	$("#search-box").css({
-		top: "-28vh"
-	});
 
-	// THE SECRET FILES TITLE
-	$("#files-text").css({
-		left: "42vh",
-		top: "-29.5vh"
-	});
-	$("#secret-text").css({
-		top: "-21vh"
-	});
+$("#search-box").focus(function() {
+  //search box css
+  //description text
+  $("#search-box").css({
+    top: "-21vh"
+  });
 
-	//description text
-	$("#description").css({
-		top: "-30vh"
-	});
+  // THE SECRET FILES TITLE
+  $("#files-text").css({
+    top: "-21vh"
+  });
+  $("#secret-text").css({
+    top: "-21vh"
+  });
 
-	//search content div
+  //description text
+  $("#description").css({
+    top: "-21vh"
+  });
 
-	$("#search-content-div").css({
-		right: "0vh"
-	});
+  //search content div
+
+  $("#search-content-div").css({
+    right: "0vh"
+  });
+
 });
 
 //search bar lose focus
@@ -56,6 +102,7 @@ $("#search-box").focusout(function () {
 		});
 	}
 });
+
 
 // Global Variables
 let hash = "d7d8f997d87b284626fc0dd41199055a";
