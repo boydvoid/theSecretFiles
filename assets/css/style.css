@@ -3,22 +3,24 @@
 TAGS
 --------------
 */
-body {
-  overflow: hidden;
-}
+
 ul {
   list-style-type: none;
 }
 
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
 /*
 --------------
 Navbar
 --------------
 */
-.navbar {
-  background-color: #00000000 !important;
-}
 
+#page-navbar {
+  display: none;
+}
 /*
 --------------
 Overlay
@@ -39,16 +41,16 @@ Overlay
 Main Container
 --------------
 */
+#homepage-div {
+  display: block;
+  overflow: hidden;
+}
 .main-title {
   font-family: "Roboto Mono", sans-serif;
-  font-size: 60px;
   transition: all 0.5s ease;
   position: relative;
-}
-
-#secret-text {
-  left: 0;
-  top: 0;
+  color: #ffffff !important;
+  z-index: 10;
 }
 
 #files-text {
@@ -73,6 +75,13 @@ Main Container
   transition: all 0.5s ease;
 }
 
+.search-box-div {
+  position: absolute;
+  right: 305px;
+  top: 70%;
+  width: 63%;
+  transition: all 0.5s ease;
+}
 #search-box {
   position: relative;
   height: 50px;
@@ -89,12 +98,11 @@ Main Container
   z-index: 2;
   border: none;
   border-radius: 0;
-  /* padding: 12px; */
   top: 0;
-  height: 48px;
-  top: -3px;
-  left: -90vh;
+  min-height: 50px;
   transition: all 0.5s ease;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 #myVideo {
@@ -110,17 +118,6 @@ Main Container
 Search Content
 --------------
 */
-
-#search-content-div {
-  bottom: 110px;
-  background-color: #0000002b;
-  border: 3px solid red;
-  position: relative;
-  padding: 25px;
-  min-height: 350px;
-  right: -200vh;
-  transition: all 0.5s ease;
-}
 
 .flex-display {
   display: flex;
@@ -146,11 +143,51 @@ Search Content
 }
 
 .character-name {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 230px;
-  color: #ffffff;
-  font-size: 30px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+/* 
+---------------
+Loading
+---------------
+*/
+
+#loading-wrapper {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 9999;
+  transition: all 0.5s ease;
+  position: fixed;
+  top: 0;
+  left: -100%;
+}
+#loading-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+/* 
+---------------
+Results Page
+---------------
+*/
+
+#results-div {
+  display: none;
+  overflow: auto;
+}
+
+#results-row {
+  margin-top: 20px;
 }
