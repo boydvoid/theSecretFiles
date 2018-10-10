@@ -11,9 +11,13 @@ let characterID;
 let characterFirstAppreance;
 let firstIssue;
 let characterCreators = [];
-
+let selectedCharacter = "Daredevil";
+let splitNames;
 let tmdbAPIKey = "3433c648bbd9030f976ba13594b4aacb";
 let tmdbURL = "https://api.themoviedb.org/3/";
 let marvelMovieList = [];
 let marvelTVList = [];
-let characterList;
+let characterObject = {
+  character: "",
+  actor: []
+};

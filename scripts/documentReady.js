@@ -1,6 +1,8 @@
 define(["shuffle"], function(a) {
   $(document).ready(function() {
     // load the homepage html
+    // tmdb testing
+    getTMDBList();
 
     let videos = [
       "antman.mp4",
