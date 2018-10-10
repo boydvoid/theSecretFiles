@@ -41,9 +41,12 @@ define(["shuffle"], function(a) {
   } else if (window.location.href.includes("results.html")) {
     //call ajax for search results
 
-    //get marvel character data
+    //from marvel.js get marvel character data
     getCharacterData();
   } else if (window.location.href.includes("portfolio.html")) {
     console.log("portfolio");
+    //from marvel.js build the character page
+    buildCharacterPage();
+    getTMDBList();
   }
 });

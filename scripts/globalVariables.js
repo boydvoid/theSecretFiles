@@ -5,13 +5,8 @@ let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
 let searchLimit = 50;
 let extension;
 
-<<<<<<< HEAD
 //get the search value from session storage
 let searchInput = sessionStorage.searchVal;
-=======
-// Character Specific
-let searchInput;
->>>>>>> develop
 let characterID;
 let characterName;
 let characterImage;
@@ -19,13 +14,8 @@ let characterDescription;
 let characterFirstAppearance;
 let firstIssue;
 let characterCreators = [];
-<<<<<<< HEAD
-let selectedCharacter = "Daredevil";
+let selectedCharacter = sessionStorage.characterName;
 let splitNames;
-=======
-
-// TMDB API
->>>>>>> develop
 let tmdbAPIKey = "3433c648bbd9030f976ba13594b4aacb";
 let tmdbURL = "https://api.themoviedb.org/3/";
 let marvelMovieList = [];

@@ -143,7 +143,9 @@ Search Content
   transition: all 0.5s ease;
 }
 
-.image-container, .comic-container, .event-container {
+.image-container,
+.comic-container,
+.event-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
   height: 250px;
@@ -229,6 +231,7 @@ Profile Page
   margin-bottom: 40px;
   margin-top: 40px;
   position: relative;
+  border: 8px solid white;
   z-index: 3;
 }
 
@@ -256,4 +259,10 @@ Profile Page
   margin: 20px;
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#actor-select {
+  height: 30px;
+  position: relative;
+  top: 120px;
+  left: 10px;
 }
