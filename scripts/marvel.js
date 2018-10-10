@@ -1,123 +1,3 @@
-$(document).ready(function () {
-	let videos = [
-		"antman.mp4",
-		"Deadpool.mp4",
-		"hulk.mp4",
-		"panther.mp4",
-		"strange.mp4",
-		"scarlett.mp4",
-		"spiderman.mp4",
-		"thanos.mp4"
-	];
-
-	let displayArray = shuffle(videos);
-	let i = 0;
-
-	$("#myVideo").attr("src", "./video/" + displayArray[i]);
-
-	//finsihed
-	document.getElementById("myVideo").addEventListener(
-		"ended",
-		function () {
-			if (i >= displayArray.length) {
-				console.log("reset");
-
-				i = 0;
-				displayArray = shuffle(videos);
-				$("#myVideo").attr("src", "./video/" + displayArray[i]);
-			} else {
-				i++;
-				$("#myVideo").attr("src", "./video/" + displayArray[i]);
-			}
-		},
-		false
-	);
-});
-
-//shuffle array
-function shuffle(a) {
-	for (let i = a.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[a[i], a[j]] = [a[j], a[i]];
-	}
-	return a;
-}
-
-// Global Variables
-let hash = "d7d8f997d87b284626fc0dd41199055a";
-let apiKey = "b13e13a4abc06dc9ba221862c9e4d24d";
-let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
-let searchLimit = 50;
-let extension;
-
-let searchInput;
-let characterID;
-
-let characterFirstAppreance;
-let firstIssue;
-let characterCreators = [];
-
-// API Calls
-
-$("#search-btn").on("click", function (event) {
-
-	event.preventDefault();
-	searchInput = $("#search-box").val();
-	getCharacterData();
-
-	//move dom elements on click
-	$(".search-box-div").css({
-		position: "absolute",
-		width: "25%",
-		top: "15px",
-		right: "0px"
-
-	});
-});
-
-
-$("#search-btn-nav").on("click", function (event) {
-
-	event.preventDefault();
-	searchInput = $("#search-box-nav").val();
-	getCharacterData();
-
-	//move dom elements on click
-	$(".search-box-div").css({
-		position: "absolute",
-		width: "25%",
-		top: "15px",
-		right: "0px"
-	});
-});
-
-// Loading Animations
-
-$(document).ajaxStart(function () {
-	$("#loading-wrapper").css({
-		left: "0"
-	});
-});
-
-$(document).ajaxComplete(function () {
-	setTimeout(function () {
-		$("#loading-wrapper").css({
-			left: "-100%"
-		});
-		$("#homepage-div").css({
-			display: "none"
-		});
-		$("#results-div").css({
-			display: "block"
-		});
-	}, 3000);
-	$("#search-content-div").css({
-		opacity: "1"
-	});
-
-});
-
-
 //--------------------------------
 // Marvel API Calls
 //--------------------------------
@@ -128,7 +8,12 @@ $(document).on("click", ".image-container", function () {
 	getComicData();
 	getEventData();
 	getCharacterDetailData();
-
+	$('#profile-container').css({
+		display: "block"
+	})
+	$('#results-div').css({
+		display: "none"
+	})
 });
 
 function getCharacterData() {
