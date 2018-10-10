@@ -30,42 +30,48 @@
 
 <body>
 
-	<!-- Header -->
-	<!-- As a link -->
+	<!-- Loading -->
+	<div id="loading-wrapper">
 
-	<div id="homepage-div">
-
-		<!-- overlay -->
-		<div class="overlay"></div>
-		<!-- video -->
-		<video autoplay muted id="myVideo">
-		</video>
-		<!-- Content -->
-		<div class="container" id="main-container">
-			<div class="row" id="top-row">
-
-				<div class="col-xl-12">
-					<h2 class="main-title" id="secret-text">The Secret </br>Files</h2>
-				</div>
-			</div>
+		<div class="container text-center" id="loading-container">
 			<div class="row">
-				<div class="col-xl-12">
 
-					<p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ratione quod alias
-						consequuntur praesentium unde
-						quisquam excepturi est minus sunt doloribus ipsum animi odit, soluta consequatur quas optio? Numquam, eaque.
-					</p>
-					<form id="homepage-search-form">
-						<input type="text" id="search-box" placeholder="Robert Downey Jr.">
-						<button type="submit" id="search-btn">Search</button>
-					</form>
+				<div class="col-xl-12">
+					<img src="./assets/images/marvelLogo.jpg" alt="">
+					<h3>LOADING...</h3>
 				</div>
 			</div>
 		</div>
-
 	</div>
 
->
+	<!-- show results page -->
+	<div class="container-fluid" id="results-div">
+
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<span class="navbar-brand main-title" id="secret-text">The Secret Files</span>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<form class="form-inline ml-auto">
+					<input type="text" id="search-box-nav" placeholder="Robert Downey Jr.">
+					<button class="search-btn" id="search-btn-nav">Search</button>
+				</form>
+			</div>
+		</nav>
+
+		<div class="container">
+
+			<div class="row" id="results-row">
+
+			</div>
+		</div>
+	</div>
+
 <!-- Custom JS -->
 <script data-main="scripts/config" src="scripts/require.js">
 

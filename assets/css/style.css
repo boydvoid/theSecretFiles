@@ -50,7 +50,6 @@ Main Container
 --------------
 */
 #homepage-div {
-  display: block;
   overflow: hidden;
 }
 .main-title {
@@ -192,7 +191,6 @@ Results Page
 */
 
 #results-div {
-  display: none;
   overflow: auto;
 }
 
@@ -213,9 +211,6 @@ Profile Page
   left: 0;
   z-index: 2;
   background-color: #000000c2;
-}
-#profile-container {
-  display: none;
 }
 #profile-banner {
   background-image: url("https://img00.deviantart.net/395c/i/2014/066/1/d/fantastic_4_banner_by_smlshin-d79byr6.jpg");

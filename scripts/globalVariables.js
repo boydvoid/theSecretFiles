@@ -5,7 +5,8 @@ let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
 let searchLimit = 50;
 let extension;
 
-let searchInput;
+//get the search value from session storage
+let searchInput = sessionStorage.searchVal;
 let characterID;
 
 let characterFirstAppreance;
