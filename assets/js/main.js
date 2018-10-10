@@ -79,7 +79,8 @@ $("#search-btn").on("click", function (event) {
 $("#search-btn-nav").on("click", function (event) {
 
 	event.preventDefault();
-	let searchInput = $("#search-box-nav").val();
+	searchInput = $("#search-box-nav").val();
+	getCharacterData();
 
 	//move dom elements on click
 	$(".search-box-div").css({
@@ -94,7 +95,6 @@ $("#search-btn-nav").on("click", function (event) {
 
 $(document).ajaxStart(function () {
 	$("#loading-wrapper").css({
-		opacity: "1",
 		left: "0"
 	});
 });
@@ -102,10 +102,8 @@ $(document).ajaxStart(function () {
 $(document).ajaxComplete(function () {
 	setTimeout(function () {
 		$("#loading-wrapper").css({
-			opacity: "0",
 			left: "-100%"
 		});
-
 		$("#homepage-div").css({
 			display: "none"
 		});
@@ -135,9 +133,7 @@ $(document).on("click", ".image-container", function () {
 
 function getCharacterData() {
 
-	$("#character-images").empty();
-	$("#comic-images").empty();
-	$("#event-images").empty();
+	$("#results-row").empty();
 
 	$.ajax({
 
