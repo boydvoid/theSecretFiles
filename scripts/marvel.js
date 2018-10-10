@@ -5,9 +5,12 @@
 $(document).on("click", ".image-container", function () {
 
 	characterID = $(this).attr("character-id");
-	getComicData();
-	getEventData();
-	getCharacterDetailData();
+	characterName = $(this).attr("character-name");
+	characterImage = $(this).attr("src");
+	characterDescription = $(this).attr("character-info");
+
+	buildCharacterPage();
+
 	$('#profile-container').css({
 		display: "block"
 	})
@@ -40,6 +43,8 @@ function getCharacterData() {
 
 			typeImage.attr("class", "image-container");
 			typeImage.attr("src", character.data.results[i].thumbnail.path + extension);
+			typeImage.attr("character-name", character.data.results[i].name);
+			typeImage.attr("character-info", character.data.results[i].description);
 
 			typeName.attr("class", "character-name");
 			typeName.text(character.data.results[i].name);
@@ -48,6 +53,56 @@ function getCharacterData() {
 			$("#results-row").append(typeWrapper);
 
 		}
+	})
+}
+
+function getCharacterDetailData() {
+
+	$.ajax({
+		cache: true,
+		url: marvelURL + "/" + characterID + "/comics?ts=1&orderBy=onsaleDate&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash,
+		method: "GET"
+
+	}).then(function (characterDetail) {
+
+		console.log("Getting Character Detail Data");
+		console.log(characterDetail);
+
+		for (let i = 0; i < characterDetail.data.results.length; i++) {
+
+			if ((characterDetail.data.results[i].dates[0].date).indexOf("-0001")) {
+
+				if (characterFirstAppearance === undefined) {
+
+					characterFirstAppearance = characterDetail.data.results[i].dates[0].date;
+					characterFirstAppearance = characterFirstAppearance.substring(0, 4);
+
+					$("#first-appearance").text(characterFirstAppearance);
+					console.log(characterFirstAppearance);
+
+					if (firstIssue === undefined) {
+
+						firstIssue = i;
+
+					}
+
+				}
+
+				for (let n = 0; n < characterDetail.data.results[firstIssue].creators.items.length; n++) {
+
+					if (!characterCreators.includes(characterDetail.data.results[firstIssue].creators.items[n].name)) {
+
+						characterCreators.push(characterDetail.data.results[firstIssue].creators.items[n].name);
+
+						$("#creators").text(characterCreators);
+						console.log(characterCreators);
+
+					}
+
+				}
+			}
+		}
+
 	})
 }
 
@@ -61,7 +116,7 @@ function getComicData() {
 
 	}).then(function (comic) {
 
-		console.log("Comic");
+		console.log("Getting Character Comic Data");
 		console.log(comic);
 
 		for (let i = 0; i < comic.data.results.length; i++) {
@@ -72,7 +127,7 @@ function getComicData() {
 
 			extension = "." + comic.data.results[i].thumbnail.extension;
 
-			typeImage.attr("class", "image-container");
+			typeImage.attr("class", "comic-container");
 			typeImage.attr("src", comic.data.results[i].thumbnail.path + extension);
 
 			typeName.attr("class", "comic-name");
@@ -95,6 +150,7 @@ function getEventData() {
 
 	}).then(function (event) {
 
+		console.log("Getting Character Event Data");
 		console.log(event);
 
 		for (let i = 0; i < event.data.results.length; i++) {
@@ -105,7 +161,7 @@ function getEventData() {
 
 			extension = "." + event.data.results[i].thumbnail.extension;
 
-			typeImage.attr("class", "image-container");
+			typeImage.attr("class", "event-container");
 			typeImage.attr("src", event.data.results[i].thumbnail.path + extension);
 
 			typeName.attr("class", "event-name");
@@ -118,47 +174,14 @@ function getEventData() {
 	})
 }
 
-function getCharacterDetailData() {
+function buildCharacterPage() {
 
-	$.ajax({
-		cache: true,
-		url: marvelURL + "/" + characterID + "/comics?ts=1&orderBy=onsaleDate&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash,
-		method: "GET"
+	$("#profile-image").attr("src", characterImage);
+	$("#character-name").text(characterName);
+	$("#character-bio").text(characterDescription);
 
-	}).then(function (characterDetail) {
+	getCharacterDetailData();
+	getComicData();
+	getEventData();
 
-		console.log(characterDetail);
-
-		for (let i = 0; i < characterDetail.data.results.length; i++) {
-
-			if ((characterDetail.data.results[i].dates[0].date).indexOf("-0001")) {
-
-				if (characterFirstAppreance === undefined) {
-
-					characterFirstAppreance = characterDetail.data.results[i].dates[0].date;
-					characterFirstAppreance = characterFirstAppreance.substring(0, 4);
-					console.log(characterFirstAppreance);
-
-					if (firstIssue === undefined) {
-
-						firstIssue = i;
-
-					}
-
-				}
-
-				for (let n = 0; n < characterDetail.data.results[firstIssue].creators.items.length; n++) {
-
-					if (!characterCreators.includes(characterDetail.data.results[firstIssue].creators.items[n].name)) {
-
-						characterCreators.push(characterDetail.data.results[firstIssue].creators.items[n].name);
-						console.log(characterCreators);
-
-					}
-
-				}
-			}
-		}
-
-	})
 }
