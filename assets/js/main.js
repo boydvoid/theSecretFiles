@@ -64,7 +64,9 @@ $("#search-btn").on("click", function (event) {
 	event.preventDefault();
 	searchInput = $("#search-box").val();
 	getCharacterData();
-
+	$("#results-div").css({
+		display: "block"
+	});
 	//move dom elements on click
 	$(".search-box-div").css({
 		position: "absolute",
@@ -107,9 +109,7 @@ $(document).ajaxComplete(function () {
 		$("#homepage-div").css({
 			display: "none"
 		});
-		$("#results-div").css({
-			display: "block"
-		});
+
 	}, 3000);
 	$("#search-content-div").css({
 		opacity: "1"
@@ -128,7 +128,12 @@ $(document).on("click", ".image-container", function () {
 	getComicData();
 	getEventData();
 	getCharacterDetailData();
-
+	$('#profile-container').css({
+		display: "block"
+	})
+	$('#results-div').css({
+		display: "none"
+	})
 });
 
 function getCharacterData() {
