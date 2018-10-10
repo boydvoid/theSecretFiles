@@ -163,9 +163,9 @@ Loading
   background-color: #ffffff;
   height: 100%;
   width: 100%;
-  opacity: 0;
+  opacity: 1 !important;
   z-index: 9999;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   position: fixed;
   top: 0;
   left: -100%;
