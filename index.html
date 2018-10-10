@@ -192,8 +192,24 @@
 </div>
 </div>
 <!-- Custom JS -->
-<script data-main="scripts/config" src="scripts/require.js"></script>
+<script data-main="scripts/config" src="scripts/require.js">
+
+	
 </script>
+
+<script>
+	//require all of the functions 
+	
+	require(['globalVariables'], function () {
+		require(['documentReady']);
+	require(['searchBtnClick']);
+	require(['ajaxComplete']);
+	require(['ajaxStart']);
+	require(['marvel']);
+	});
+
+</script>
+
 </body>
 
 </html>

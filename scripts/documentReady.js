@@ -1,5 +1,7 @@
 define(["shuffle"], function(a) {
   $(document).ready(function() {
+    // load the homepage html
+
     let videos = [
       "antman.mp4",
       "Deadpool.mp4",

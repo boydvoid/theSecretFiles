@@ -2,9 +2,10 @@
 //   baseUrl: "scripts",
 //   path: {}
 // });
-require(["documentReady"]);
 require(["globalVariables"]);
 require(["searchBtnClick"]);
 require(["ajaxComplete"]);
 require(["ajaxStart"]);
 require(["marvel"]);
+require(["tmdb"]);
+require(["documentReady"]);

@@ -1,4 +1,4 @@
-define(function() {
+define([], function() {
   $("#search-btn").on("click", function(event) {
     console.log("teset");
     event.preventDefault();

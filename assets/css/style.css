@@ -3,11 +3,11 @@
 TAGS
 --------------
 */
-html{
+html {
   height: 100%;
 }
 
-body{
+body {
   height: 100%;
   background-color: #ececec;
 }
@@ -205,7 +205,7 @@ Profile Page
 ---------------
 */
 
-.img-overlay{
+.img-overlay {
   height: 280px;
   width: 100%;
   position: absolute;
@@ -214,18 +214,18 @@ Profile Page
   z-index: 2;
   background-color: #000000c2;
 }
-#profile-container{
+#profile-container {
   display: none;
 }
-#profile-banner{
+#profile-banner {
   background-image: url("https://img00.deviantart.net/395c/i/2014/066/1/d/fantastic_4_banner_by_smlshin-d79byr6.jpg");
 }
-#banner-info{
+#banner-info {
   position: relative;
   z-index: 3;
 }
 
-#profile-image{
+#profile-image {
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -235,7 +235,7 @@ Profile Page
   z-index: 3;
 }
 
-#character-name{
+#character-name {
   color: white;
   font-size: 20px;
   align-content: center;
@@ -244,7 +244,7 @@ Profile Page
   justify-content: center;
   margin-right: 15px;
 }
-#actor-name{
+#actor-name {
   color: white;
   font-size: 20px;
   align-content: center;
@@ -254,9 +254,9 @@ Profile Page
   margin-left: 15px;
 }
 
-.info-panel{
+.info-panel {
   background-color: #ffffff;
   margin: 20px;
-  padding:10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
