@@ -1,0 +1,325 @@
+/*
+--------------
+TAGS
+--------------
+*/
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #ececec;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+--------------
+Navbar
+--------------
+*/
+
+#page-navbar {
+  display: none;
+}
+
+/*
+--------------
+Overlay
+--------------
+*/
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000052;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+/*
+--------------
+Main Container
+--------------
+*/
+
+#homepage-div {
+  overflow: hidden;
+}
+
+.main-title {
+  font-family: "Roboto Mono", sans-serif;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #ffffff !important;
+  z-index: 10;
+}
+
+#secret-text-home {
+  font-size: 50px;
+}
+
+#files-text {
+  left: 0;
+  top: 0;
+}
+
+#top-row {
+  position: relative;
+  z-index: 2;
+  margin-top: 30vh;
+  color: #ffffff;
+}
+
+#description {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  width: 50%;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+.search-box-div {
+  position: absolute;
+  right: 305px;
+  top: 70%;
+  width: 63%;
+  transition: all 0.5s ease;
+}
+
+#search-box {
+  position: relative;
+  height: 50px;
+  width: 50%;
+  padding: 10px;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  border: none;
+  transition: all 0.5s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.search-btn {
+  background-color: #ed1d24;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  min-height: 52px;
+  transition: all 0.5s ease;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.search-btn-small {
+  background-color: #ed1d24;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  min-height: 30px;
+  transition: all 0.5s ease;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*
+--------------
+Search Content
+--------------
+*/
+
+.flex-display {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.flex-display:hover {
+  overflow: auto;
+}
+
+.images {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.image-container,
+.comic-container,
+.event-container {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  height: 250px;
+  margin-right: 20px;
+  width: 250px;
+}
+
+.character-name {
+  font-size: 16px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 230px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+/* 
+---------------
+Loading
+---------------
+*/
+
+#loading-wrapper {
+  background-color: #d8d8d8;
+  height: 100%;
+  width: 100%;
+  opacity: 1 !important;
+  z-index: 9999;
+  transition: all 0.2s ease;
+  position: fixed;
+  top: 0;
+  left: 0%;
+}
+
+#loading-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* 
+---------------
+Results Page
+---------------
+*/
+
+#results-div {
+  overflow: auto;
+}
+
+#results-row {
+  margin-top: 20px;
+}
+
+/* 
+---------------
+Profile Page
+---------------
+*/
+
+.img-overlay {
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  z-index: 2;
+  background-color: #000000c2;
+}
+
+#profile-banner {
+  background-image: url("https://img00.deviantart.net/395c/i/2014/066/1/d/fantastic_4_banner_by_smlshin-d79byr6.jpg");
+}
+
+#banner-info {
+  position: relative;
+  z-index: 3;
+}
+
+#profile-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  position: relative;
+  border: 8px solid white;
+  z-index: 3;
+}
+
+#character-name {
+  color: white;
+  font-size: 20px;
+  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+#actor-name {
+  color: white;
+  font-size: 20px;
+  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.info-panel {
+  background-color: #ffffff;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#actor-select {
+  height: 30px;
+  position: relative;
+  top: 120px;
+  left: 10px;
+}
+
+#marvel-logo {
+  width: 25%;
+  animation: float 3s ease-in-out infinite;
+
+
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}

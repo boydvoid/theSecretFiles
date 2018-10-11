@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	 <script
+	 src="https://code.jquery.com/jquery-3.3.1.min.js"
+	 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	<title>The Secret Files</title>
+
+</head>
+
+<body>
+
+	
+
+	<!-- Loading -->
+	<div id="loading-wrapper">
+
+		<div class="container text-center" id="loading-container">
+			<div class="row">
+
+				<div class="col-xl-12">
+						<img id="marvel-logo" src="./assets/images/marvelLogo.jpg" alt="">
+					<h3>LOADING...</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- profile page  -->
+		<div class = "container-fluid" id = "profile-container">
+	
+			<nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
+				<span class = "navbar-brand main-title" id = "secret-text-3"><a href = "index.html">The Secret Files</a> </span>
+				<button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarSupportedContent"
+						aria-controls = "navbarSupportedContent" aria-expanded = "false" aria-label = "Toggle navigation">
+					<span class = "navbar-toggler-icon"></span>
+				</button>
+				
+				<div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+					
+					<form class = "form-inline ml-auto">
+						<input type = "text" id = "search-box-nav" placeholder = "Captain America">
+						<button class = "search-btn-small" id = "search-btn-nav">Search</button>
+					</form>
+				</div>
+			</nav>
+			
+			<div class = "row" id = "profile-banner">
+				<div class = "img-overlay"></div>
+				<div class = "col-xl-12">
+					
+					<div class = "d-flex justify-content-center" id = "banner-info">
+						<p id = "character-name"></p>
+						<img class = "justify-content-center" src = "" alt = "" id = "profile-image">
+						<select id="actor-select">
+							<option value="">No Actors Found</option>
+						</select>
+							
+					</div>
+				
+				</div>
+			</div>
+			
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-xl-3">
+						
+						<div class = "info-panel">
+							<div>
+								<h4>First Appearance</h4>
+								<p id = "first-appearance"></p>
+							</div>
+							
+							<div>
+								<h4>Creators</h4>
+								<p id = "creators"></p>
+							</div>
+						</div>
+					</div>
+					
+					<div class = "col-xl-9">
+						<div class = "info-panel">
+							
+							<h4>Bio</h4>
+							<p id = "character-bio"></p>
+						</div>
+					</div>
+				
+				</div>
+				
+				<div class = "row">
+					
+					<div class = "col-xl-12">
+						<div class = "info-panel">
+							<h4>Comics</h4>
+							<div class = "flex-display" id = "comic-images"></div>
+						</div>
+					</div>
+				
+				</div>
+				
+				<div class = "row">
+					
+					<div class = "col-xl-12">
+						<div class = "info-panel">
+							<h4>Events</h4>
+							<div class = "flex-display" id = "event-images"></div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+<!-- Custom JS -->
+<script data-main="scripts/config" src="scripts/require.js">
+
+	
+</script>
+
+</body>
+
+</html>
