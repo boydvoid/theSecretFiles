@@ -4,6 +4,7 @@ define(["shuffle"], function(a) {
     $(document).ready(function() {
       //clear the sessions storage on the homepage
       sessionStorage.clear();
+
       let videos = [
         "antman.mp4",
         "Deadpool.mp4",
@@ -24,11 +25,11 @@ define(["shuffle"], function(a) {
       document.getElementById("myVideo").addEventListener(
         "ended",
         function() {
-          if (i >= displayArray.length) {
+          if (i === displayArray.length - 1) {
             console.log("reset");
 
             i = 0;
-            displayArray = shuffle(videos);
+            let displayArray = a.shuffle(videos);
             $("#myVideo").attr("src", "./video/" + displayArray[i]);
           } else {
             i++;
