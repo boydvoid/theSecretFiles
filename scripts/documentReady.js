@@ -1,9 +1,10 @@
-define(["shuffle"], function(a) {
+define(["shuffle"], function (a) {
   if (window.location.href.includes("index.html")) {
     console.log("home");
-    $(document).ready(function() {
+    $(document).ready(function () {
       //clear the sessions storage on the homepage
       sessionStorage.clear();
+
       let videos = [
         "antman.mp4",
         "Deadpool.mp4",
@@ -23,12 +24,12 @@ define(["shuffle"], function(a) {
       //finsihed
       document.getElementById("myVideo").addEventListener(
         "ended",
-        function() {
-          if (i >= displayArray.length) {
+        function () {
+          if (i === displayArray.length - 1) {
             console.log("reset");
 
             i = 0;
-            displayArray = shuffle(videos);
+            let displayArray = a.shuffle(videos);
             $("#myVideo").attr("src", "./video/" + displayArray[i]);
           } else {
             i++;
@@ -39,12 +40,34 @@ define(["shuffle"], function(a) {
       );
     });
   } else if (window.location.href.includes("results.html")) {
-    //call ajax for search results
+    $(document).ready(function () {
 
+      //call ajax for search results
+      $("#slideshow > div:gt(0)").hide();
+
+      setInterval(function () {
+        $('#slideshow > div:first')
+          .fadeOut(1000)
+          .next()
+          .fadeIn(1000)
+          .end()
+          .appendTo('#slideshow');
+      }, 3000);
+    });
     //from marvel.js get marvel character data
     getCharacterData();
   } else if (window.location.href.includes("portfolio.html")) {
     console.log("portfolio");
+    $("#slideshow > div:gt(0)").hide();
+
+    setInterval(function () {
+      $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+    }, 3000);
     //from marvel.js build the character page
     buildCharacterPage();
     getTMDBList();

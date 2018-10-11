@@ -4,7 +4,7 @@ function getTMDBList() {
     url: tmdbURL + "list/92826?api_key=" + tmdbAPIKey + "&language=en-US",
     method: "GET",
     global: false
-  }).then(function(tmdbList) {
+  }).then(function (tmdbList) {
     for (let i = 0; i < tmdbList.items.length; i++) {
       if (tmdbList.items[i].media_type === "movie") {
         marvelMovieList.unshift(tmdbList.items[i].id);
@@ -14,7 +14,7 @@ function getTMDBList() {
         marvelTVList.unshift(tmdbList.items[i].id);
       }
     }
-    setTimeout(function() {
+    setTimeout(function () {
       getTMDBTVInfo();
     }, 1000);
   });
@@ -29,7 +29,7 @@ function getTMDBTVInfo() {
       url: tmdbURL + "tv/" + tvID + "/credits?api_key=" + tmdbAPIKey + "&language=en-US",
       method: "GET",
       global: false
-    }).then(function(tmdbTVList) {
+    }).then(function (tmdbTVList) {
       for (let i = 0; i < tmdbTVList.cast.length; i++) {
         if (tmdbTVList.cast[i].character.includes("/")) {
           splitNames = tmdbTVList.cast[i].character.split("/");
@@ -79,8 +79,9 @@ function getTMDBMovieInfo() {
     $.ajax({
       cache: true,
       url: tmdbURL + "movie/" + movieID + "/credits?api_key=" + tmdbAPIKey + "&language=en-US",
-      method: "GET"
-    }).then(function(tmdbMovieList) {
+      method: "GET",
+
+    }).then(function (tmdbMovieList) {
       for (let i = 0; i < tmdbMovieList.cast.length; i++) {
         if (tmdbMovieList.cast[i].character.includes("/")) {
           splitNames = tmdbMovieList.cast[i].character.split("/");

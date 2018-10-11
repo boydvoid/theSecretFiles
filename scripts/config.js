@@ -3,8 +3,8 @@
 //   path: {}
 // });
 require(["globalVariables"]);
-require(["ajaxComplete"]);
-require(["ajaxStart"]);
+require(["slideshow"]);
+
 require(["searchBtnClick"]);
 require(["portfolioPage"]);
 require(["imageClicks"]);
