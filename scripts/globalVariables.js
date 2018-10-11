@@ -34,3 +34,18 @@ let birthday;
 let bio;
 let profileImage;
 let placeOfBirth;
+//firebase 
+
+var config = {
+  apiKey: "AIzaSyBDM9ekqHRZwj_ymA8byZo_3gKqQ6EOSDE",
+  authDomain: "vaderconfetti.firebaseapp.com",
+  databaseURL: "https://vaderconfetti.firebaseio.com",
+  projectId: "vaderconfetti",
+  storageBucket: "vaderconfetti.appspot.com",
+  messagingSenderId: "653966580632"
+};
+firebase.initializeApp(config);
+let database = firebase.database();
+let email;
+let password;
+var user = firebase.auth().currentUser;

@@ -43,3 +43,16 @@ define([], function () {
     window.location.href = "portfolio.html";
   });
 });
+
+
+//fav-button 
+$(document).on("click", "#fav-btn", function () {
+  if (user != null) {
+    database.ref(user.id).append({
+      characterName: sessionStorage.characterName,
+      characterImage: sessionStorage.characterImage,
+      characterID: sessionStorage.characterID,
+      characterDescription: sessionStorage.characterDescription
+    });
+  }
+})

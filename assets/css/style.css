@@ -80,6 +80,27 @@ Main Container
   overflow: hidden;
 }
 
+.username-p {
+  color: #ffffff;
+  position: fixed;
+  z-index: 4;
+  right: 86px;
+}
+
+#modal-open {
+  display: block;
+  position: fixed;
+  z-index: 5;
+  right: 10px;
+}
+
+#logout-btn {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  right: 10px;
+}
+
 .main-title {
   font-family: MarvelFont, sans-serif;
   transition: all 0.5s ease;
@@ -183,6 +204,24 @@ Main Container
 Search Content
 --------------
 */
+
+.username-results {
+  color: #ffffff;
+  position: relative;
+  z-index: 4;
+  /* right: 86px; */
+  display: inherit;
+  top: 6px;
+}
+
+.username-page {
+
+  position: relative;
+  z-index: 4;
+  /* right: 86px; */
+  display: inherit;
+  top: 6px;
+}
 
 .flex-display {
   display: flex;
@@ -389,6 +428,13 @@ Profile Page
   width: 25%;
   animation: float 3s ease-in-out infinite;
 
+}
+
+#fav-btn {
+  display: none;
+  position: relative;
+  z-index: 5;
+  right: 100px;
 }
 
 @keyframes float {

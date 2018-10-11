@@ -3,6 +3,7 @@
 //   path: {}
 // });
 require(["globalVariables"]);
+require(["firebase"]);
 require(["onclicks"]);
 require(["portfolioBuilder"]);
 require(["marvel"]);
