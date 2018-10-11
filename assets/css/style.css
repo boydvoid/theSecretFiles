@@ -20,6 +20,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 /*
 --------------
 Navbar
@@ -29,6 +30,7 @@ Navbar
 #page-navbar {
   display: none;
 }
+
 /*
 --------------
 Overlay
@@ -53,12 +55,17 @@ Main Container
 #homepage-div {
   overflow: hidden;
 }
+
 .main-title {
   font-family: "Roboto Mono", sans-serif;
   transition: all 0.5s ease;
   position: relative;
   color: #ffffff !important;
   z-index: 10;
+}
+
+#secret-text-home {
+  font-size: 50px;
 }
 
 #files-text {
@@ -90,27 +97,46 @@ Main Container
   width: 63%;
   transition: all 0.5s ease;
 }
+
 #search-box {
   position: relative;
   height: 50px;
   width: 50%;
+  padding: 10px;
   z-index: 2;
   left: 0;
   top: 0;
+  border: none;
   transition: all 0.5s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-#search-btn {
+.search-btn {
   background-color: #ed1d24;
   position: relative;
   z-index: 2;
   border: none;
   border-radius: 0;
   top: 0;
-  min-height: 50px;
+  min-height: 52px;
   transition: all 0.5s ease;
   padding-left: 25px;
   padding-right: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.search-btn-small {
+  background-color: #ed1d24;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  min-height: 30px;
+  transition: all 0.5s ease;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 #myVideo {
@@ -179,8 +205,9 @@ Loading
   transition: all 0.2s ease;
   position: fixed;
   top: 0;
-  left: -100%;
+  left: 0%;
 }
+
 #loading-container {
   position: relative;
   top: 50%;
@@ -188,6 +215,7 @@ Loading
   z-index: 9999;
   transform: translate(-50%, -50%);
 }
+
 /* 
 ---------------
 Results Page
@@ -201,6 +229,7 @@ Results Page
 #results-row {
   margin-top: 20px;
 }
+
 /* 
 ---------------
 Profile Page
@@ -216,9 +245,11 @@ Profile Page
   z-index: 2;
   background-color: #000000c2;
 }
+
 #profile-banner {
   background-image: url("https://img00.deviantart.net/395c/i/2014/066/1/d/fantastic_4_banner_by_smlshin-d79byr6.jpg");
 }
+
 #banner-info {
   position: relative;
   z-index: 3;
@@ -244,6 +275,7 @@ Profile Page
   justify-content: center;
   margin-right: 15px;
 }
+
 #actor-name {
   color: white;
   font-size: 20px;
@@ -260,6 +292,7 @@ Profile Page
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 #actor-select {
   height: 30px;
   position: relative;

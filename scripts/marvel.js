@@ -8,19 +8,16 @@ function getCharacterData() {
 
   $.ajax({
     cache: true,
-    url:
-      marvelURL +
-      "?ts=1&nameStartsWith=" +
-      searchInput +
-      "&limit=" +
-      searchLimit +
-      "&apikey=" +
-      apiKey +
-      "&hash=" +
-      hash,
+    url: marvelURL + "?ts=1&nameStartsWith=" + searchInput + "&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash,
     method: "GET",
-    global: false
-  }).then(function(character) {
+    success: function () {
+      setTimeout(function () {
+        $("#loading-wrapper").css({
+          left: "-100%"
+        });
+      }, 3000);
+    }
+  }).then(function (character) {
     console.log(character);
 
     for (let i = 0; i < character.data.results.length; i++) {
@@ -48,19 +45,10 @@ function getCharacterData() {
 function getCharacterDetailData() {
   $.ajax({
     cache: true,
-    url:
-      marvelURL +
-      "/" +
-      sessionStorage.characterID +
-      "/comics?ts=1&orderBy=onsaleDate&limit=" +
-      searchLimit +
-      "&apikey=" +
-      apiKey +
-      "&hash=" +
-      hash,
+    url: marvelURL + "/" + sessionStorage.characterID + "/comics?ts=1&orderBy=onsaleDate&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash,
     method: "GET",
     global: false
-  }).then(function(characterDetail) {
+  }).then(function (characterDetail) {
     console.log("Getting Character Detail Data");
     console.log(characterDetail);
 
@@ -94,19 +82,11 @@ function getCharacterDetailData() {
 function getComicData() {
   $.ajax({
     cache: true,
-    url:
-      marvelURL +
-      "/" +
-      sessionStorage.characterID +
-      "/comics?orderBy=onsaleDate&formatType=comic&noVariants=false&hasDigitalIssue=true&limit=" +
-      searchLimit +
-      "&apikey=" +
-      apiKey +
-      "&hash=" +
+    url: marvelURL + "/" + sessionStorage.characterID + "/comics?ts=1&orderBy=onsaleDate&formatType=comic&noVariants=false&hasDigitalIssue=true&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" +
       hash,
     method: "GET",
     global: false
-  }).then(function(comic) {
+  }).then(function (comic) {
     console.log("Getting Character Comic Data");
     console.log(comic);
 
@@ -132,18 +112,16 @@ function getComicData() {
 function getEventData() {
   $.ajax({
     cache: true,
-    url:
-      marvelURL +
-      "/" +
-      sessionStorage.characterID +
-      "/events?ts=1&limit=" +
-      searchLimit +
-      "&apikey=" +
-      apiKey +
-      "&hash=" +
-      hash,
-    method: "GET"
-  }).then(function(event) {
+    url: marvelURL + "/" + sessionStorage.characterID + "/events?ts=1&limit=" + searchLimit + "&apikey=" + apiKey + "&hash=" + hash,
+    method: "GET",
+    success: function () {
+      setTimeout(function () {
+        $("#loading-wrapper").css({
+          left: "-100%"
+        });
+      }, 3000);
+    }
+  }).then(function (event) {
     console.log("Getting Character Event Data");
     console.log(event);
 
