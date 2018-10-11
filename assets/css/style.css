@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  background-color: #c7c7c72b;
   height: 100%;
   overflow: hidden;
 }
@@ -203,11 +204,20 @@ Search Content
 .event-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   height: 140px;
   width: 100px;
   /* overflow: scroll; */
   text-align: center;
 
+}
+
+.character-name {
+  font-size: 16px !important;
+  margin-top: 30px !important;
+  width: 250px !important;
 }
 
 .character-name,
@@ -219,9 +229,23 @@ Search Content
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 190px;
-  color: #000000;
-  margin-top: 10px;
+  color: #333;
+  margin-top: 50px;
   margin-bottom: 0px;
+}
+
+.comic-wrapper,
+.event-wrapper{
+  margin-right: 20px;
+}
+
+.marvel-font {
+  font-family: MarvelFont, sans-serif;
+  font-size: 3em;
+}
+
+.section-divider {
+  margin-bottom: 40px;
 }
 
 /* 
@@ -303,8 +327,8 @@ Profile Page
 
 .main-image {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   margin-bottom: 15px;
   margin-top: 40px;
   position: relative;
@@ -325,9 +349,7 @@ Profile Page
 
 }
 
-
 .info-panel {
-  background-color: #ffffff;
   margin: 20px;
   padding: 10px;
 

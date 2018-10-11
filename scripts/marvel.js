@@ -93,7 +93,7 @@ function getComicData() {
     $('#loading-text').text("Getting Comics Data. This might take a minute.");
     banner = comic.data.results[0].thumbnail.path + "." + comic.data.results[0].thumbnail.extension;
     for (let i = 0; i < comic.data.results.length; i++) {
-      let typeWrapper = $("<div>");
+      let typeWrapper = $("<div class='comic-wrapper'>");
       let typeName = $("<p>");
       let typeImage = $("<img>");
       extension = "." + comic.data.results[i].thumbnail.extension;
@@ -140,7 +140,7 @@ function getEventData() {
     console.log(event);
     $('#loading-text').text("Getting Event Data. This might take a minute.")
     for (let i = 0; i < event.data.results.length; i++) {
-      let typeWrapper = $("<div>");
+      let typeWrapper = $("<div class='event-wrapper'>");
       let typeName = $("<p>");
       let typeImage = $("<img>");
 
