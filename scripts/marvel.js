@@ -51,7 +51,7 @@ function getCharacterDetailData() {
   }).then(function (characterDetail) {
     console.log("Getting Character Detail Data");
     console.log(characterDetail);
-
+    $('#loading-text').text("Getting Character Details");
     for (let i = 0; i < characterDetail.data.results.length; i++) {
       if (characterDetail.data.results[i].dates[0].date.indexOf("-0001")) {
         if (characterFirstAppearance === undefined) {
@@ -90,12 +90,12 @@ function getComicData() {
   }).then(function (comic) {
     console.log("Getting Character Comic Data");
     console.log(comic);
-
+    $('#loading-text').text("Getting Comics Data. This might take a minute.");
+    banner = comic.data.results[0].thumbnail.path + "." + comic.data.results[0].thumbnail.extension;
     for (let i = 0; i < comic.data.results.length; i++) {
       let typeWrapper = $("<div>");
       let typeName = $("<p>");
       let typeImage = $("<img>");
-
       extension = "." + comic.data.results[i].thumbnail.extension;
 
       typeImage.attr("class", "comic-container");
@@ -104,10 +104,19 @@ function getComicData() {
       typeName.attr("class", "comic-name");
       typeName.text(comic.data.results[i].title);
       typeImage.attr("comic-id", comic.data.results[i].id);
-      typeWrapper.append(typeName, typeImage);
+      typeWrapper.append(typeImage, typeName);
       $("#comic-images").append(typeWrapper);
     }
     getEventData();
+    $("#banner-info").css({
+      'background-image': 'url(' + banner + ')',
+      "position": "relative",
+      "height": "100vh",
+      "align-items": "center",
+      "text-align": "center",
+      "background-size": "cover",
+      "background-position": "center center"
+    });
   });
 }
 
@@ -129,7 +138,7 @@ function getEventData() {
   }).then(function (event) {
     console.log("Getting Character Event Data");
     console.log(event);
-
+    $('#loading-text').text("Getting Event Data. This might take a minute.")
     for (let i = 0; i < event.data.results.length; i++) {
       let typeWrapper = $("<div>");
       let typeName = $("<p>");
@@ -143,7 +152,7 @@ function getEventData() {
       typeName.attr("class", "event-name");
       typeName.text(event.data.results[i].title);
       typeImage.attr("event-id", event.data.results[i].id);
-      typeWrapper.append(typeName, typeImage);
+      typeWrapper.append(typeImage, typeName);
       $("#event-images").append(typeWrapper);
     }
   });

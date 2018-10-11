@@ -15,7 +15,7 @@ html {
 
 body {
   height: 100%;
-  background-color: #ececec;
+  overflow: hidden;
 }
 
 ul {
@@ -25,6 +25,19 @@ ul {
 .container-fluid {
   margin: 0;
   padding: 0;
+}
+
+.col-xl-6 {
+  padding: 0px;
+}
+
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 50%;
+  z-index: 1030;
 }
 
 /*
@@ -166,6 +179,7 @@ Search Content
   flex-direction: row;
   overflow: hidden;
   z-index: 3;
+  text-align: center;
 }
 
 .flex-display:hover {
@@ -177,9 +191,7 @@ Search Content
   transition: all 0.5s ease;
 }
 
-.image-container,
-.comic-container,
-.event-container {
+.image-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
   height: 250px;
@@ -187,17 +199,29 @@ Search Content
   width: 250px;
 }
 
+.comic-container,
+.event-container {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  height: 140px;
+  width: 100px;
+  /* overflow: scroll; */
+  text-align: center;
+
+}
+
 .character-name,
 .comic-name,
 .event-name {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 230px;
+  width: 190px;
   color: #000000;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 /* 
@@ -248,24 +272,33 @@ Profile Page
 */
 
 .img-overlay {
-  height: 301px;
+  height: 100vh;
   width: 100%;
   position: absolute;
-  top: 56px;
-  left: 0;
   z-index: 2;
-  background-color: #000000c2;
+  background-color: #000000e8;
 }
 
 #profile-banner {
-  background-color: #ed1d24;
+  position: relative;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
   background-size: cover;
   background-position: center center;
 }
 
+.hr-white {
+  border: 2px solid white;
+}
+
 #banner-info {
   position: relative;
-  z-index: 3;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
 }
 
 .main-image {
@@ -276,43 +309,28 @@ Profile Page
   margin-top: 40px;
   position: relative;
   border: 8px solid white;
-  z-index: 3;
+  z-index: 4;
   background-size: cover;
   background-position: center center;
 }
 
-#character-name {
-  color: white;
-  font-size: 20px;
-  align-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
+.character-content {
+  position: relative;
+  z-index: 4;
+  color: #ffffff;
 }
 
-#actor-name {
-  color: white;
+#actor-character-name {
   font-size: 20px;
-  align-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 15px;
+
 }
+
 
 .info-panel {
   background-color: #ffffff;
   margin: 20px;
   padding: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
 
-#actor-select {
-  height: 30px;
-  position: relative;
-  top: 120px;
-  left: 10px;
 }
 
 #marvel-logo {
@@ -335,5 +353,11 @@ Profile Page
   100% {
     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    overflow: auto;
   }
 }
