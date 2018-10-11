@@ -6,7 +6,7 @@ Global
 
 @font-face {
   font-family: 'MarvelFont';
-  src: url('../font/AVENGEANCE.ttf');
+  src: url('../font/AVENGEANCE HEROIC AVENGER.ttf');
 }
 
 html {
@@ -15,6 +15,7 @@ html {
 
 body {
   background-color: #c7c7c72b;
+  font-family: 'Roboto', sans-serif;
   height: 100%;
   overflow: hidden;
 }
@@ -28,11 +29,8 @@ ul {
   padding: 0;
 }
 
-.col-xl-6 {
-  padding: 0px;
-}
-
 .nav-fixed {
+  padding-right: 30px;
   position: fixed;
   top: 0;
   right: 0;
@@ -178,6 +176,8 @@ Main Container
 }
 
 .search-btn-small {
+  font-weight: 500;
+  color: #FFF;
   background-color: #ed1d24;
   position: relative;
   z-index: 2;
@@ -189,6 +189,12 @@ Main Container
   padding-left: 25px;
   padding-right: 25px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.search-btn-small:hover {
+  background-color: #8f1519;
+  border-radius: 10px;
 }
 
 #myVideo {
@@ -243,6 +249,7 @@ Search Content
 .image-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  cursor: pointer;
   height: 250px;
   margin-right: 20px;
   width: 250px;
@@ -252,15 +259,19 @@ Search Content
 .event-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  height: 140px;
-  width: 100px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  height: 240px;
+  width: 200px;
   /* overflow: scroll; */
   text-align: center;
 
 }
 
 .character-name {
+  font-size: 14px !important;
+  margin-top: 10px;
   width: 250px !important;
 }
 
@@ -272,10 +283,16 @@ Search Content
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 190px;
+  width: 215px;
   color: #333;
   margin-bottom: 10px !important;
   text-transform: uppercase;
+}
+
+.comic-name,
+.event-name {
+  margin-top: 20px;
+  font-size: 0.8em;
 }
 
 .comic-wrapper,
@@ -285,7 +302,8 @@ Search Content
 
 .marvel-font {
   font-family: MarvelFont, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
+  letter-spacing: 1.4px;
 }
 
 .section-divider {
@@ -339,13 +357,10 @@ Profile Page
 ---------------
 */
 
-#character-name {
-  font-size: 2em;
-}
-
 .red-link {
   background-color: #ed1d24;
   cursor: pointer;
+  font-weight: 500;
   transition: all .5s ease;
 }
 
@@ -359,7 +374,7 @@ Profile Page
   width: 100%;
   position: absolute;
   z-index: 2;
-  background-color: #000000e8;
+  background-color: #0000009e;
 }
 
 #profile-banner {
@@ -403,6 +418,13 @@ Profile Page
   color: #ffffff;
 }
 
+.info-panel {
+  margin: 20px;
+  padding: 10px;
+
+}
+
+
 #actor-character-name {
   font-size: 20px;
 
@@ -415,20 +437,30 @@ Profile Page
 }
 
 #actor-name {
-  font-size: 2em;
+  font-size: 4em;
 }
 
-.info-panel {
-  margin: 20px;
-  padding: 10px;
-
+#character-name {
+  font-size: 4em;
 }
 
 #marvel-logo {
   width: 25%;
+  margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
 
 }
+
+#first-appearance,
+#creators{
+  font-weight: 500;
+}
+
+/*
+---------------
+Media Queries
+---------------
+*/
 
 #fav-btn {
   display: none;
@@ -458,4 +490,19 @@ Profile Page
   body {
     overflow: auto;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  #secret-text-home {
+    font-size: 5em;
+  }
+
+  #description {
+    width: 100%;
+  }
+
+  #results-row {
+    margin-left: 17%;
+  }
+
 }
