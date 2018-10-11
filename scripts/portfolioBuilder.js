@@ -21,14 +21,14 @@ function actorDropdown() {
     option.text(characterObject.actor[i]);
     option.val(characterObject.actor[i]);
 
-    $(".info-panel").append(option);
+    $("#actor-select").append(option);
   }
 }
 
 //build the actor page 
 function buildActorPage() {
 
-  $("#character-name").text(sessionStorage.characterName);
+  $("#actor-character-name").text(sessionStorage.characterName);
   $("#actor-name").text(sessionStorage.actorName);
   $("#birthday").text(birthday);
   $("#place-of-birth").text(placeOfBirth);
