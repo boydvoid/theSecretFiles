@@ -2,15 +2,16 @@ function getTMDBList() {
   $.ajax({
     cache: true,
     url: tmdbURL + "list/92826?api_key=" + tmdbAPIKey + "&language=en-US",
-    method: "GET"
+    method: "GET",
+    global: false
   }).then(function(tmdbList) {
     for (let i = 0; i < tmdbList.items.length; i++) {
       if (tmdbList.items[i].media_type === "movie") {
-        marvelMovieList.push(tmdbList.items[i].id);
+        marvelMovieList.unshift(tmdbList.items[i].id);
       }
 
       if (tmdbList.items[i].media_type === "tv") {
-        marvelTVList.push(tmdbList.items[i].id);
+        marvelTVList.unshift(tmdbList.items[i].id);
       }
     }
     setTimeout(function() {
@@ -26,7 +27,8 @@ function getTMDBTVInfo() {
     $.ajax({
       cache: true,
       url: tmdbURL + "tv/" + tvID + "/credits?api_key=" + tmdbAPIKey + "&language=en-US",
-      method: "GET"
+      method: "GET",
+      global: false
     }).then(function(tmdbTVList) {
       for (let i = 0; i < tmdbTVList.cast.length; i++) {
         if (tmdbTVList.cast[i].character.includes("/")) {
@@ -39,7 +41,7 @@ function getTMDBTVInfo() {
             characterObject["character"] = characterName;
             if (characterObject["actor"].indexOf(actorName) === -1) {
               Object.values(characterObject).indexOf(actorName);
-              characterObject["actor"].push(actorName);
+              characterObject["actor"].unshift(actorName);
             }
           } else if (splitNames[1].includes(selectedCharacter)) {
             let characterName = splitNames[1].trim();
@@ -47,7 +49,7 @@ function getTMDBTVInfo() {
             characterObject["character"] = characterName;
             if (characterObject["actor"].indexOf(actorName) === -1) {
               Object.values(characterObject).indexOf(actorName);
-              characterObject["actor"].push(actorName);
+              characterObject["actor"].unshift(actorName);
             }
           }
         } else {
@@ -58,7 +60,7 @@ function getTMDBTVInfo() {
             characterObject["character"] = characterName;
 
             if (characterObject["actor"].indexOf(actorName) === -1) {
-              characterObject["actor"].push(actorName);
+              characterObject["actor"].unshift(actorName);
             }
           }
         }
@@ -91,7 +93,7 @@ function getTMDBMovieInfo() {
 
             if (characterObject["actor"].indexOf(actorName) === -1) {
               Object.values(characterObject).indexOf(actorName);
-              characterObject["actor"].push(actorName);
+              characterObject["actor"].unshift(actorName);
             }
           } else if (splitNames[1].indexOf(selectedCharacter) > -1) {
             let characterName = splitNames[1].trim();
@@ -100,7 +102,7 @@ function getTMDBMovieInfo() {
 
             if (characterObject["actor"].indexOf(actorName) === -1) {
               Object.values(characterObject).indexOf(actorName);
-              characterObject["actor"].push(actorName);
+              characterObject["actor"].unshift(actorName);
             }
           }
         } else {
@@ -111,7 +113,7 @@ function getTMDBMovieInfo() {
             characterObject["character"] = characterName;
 
             if (characterObject["actor"].indexOf(actorName) === -1) {
-              characterObject["actor"].push(actorName);
+              characterObject["actor"].unshift(actorName);
             }
           }
         }

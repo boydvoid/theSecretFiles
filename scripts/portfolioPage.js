@@ -22,6 +22,5 @@ function actorDropdown() {
     option.val(characterObject.actor[i]);
 
     $("#actor-select").prepend(option);
-    characterObject.actor[i].split(i, 1);
   }
 }

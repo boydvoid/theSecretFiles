@@ -18,7 +18,8 @@ function getCharacterData() {
       apiKey +
       "&hash=" +
       hash,
-    method: "GET"
+    method: "GET",
+    global: false
   }).then(function(character) {
     console.log(character);
 
@@ -57,7 +58,8 @@ function getCharacterDetailData() {
       apiKey +
       "&hash=" +
       hash,
-    method: "GET"
+    method: "GET",
+    global: false
   }).then(function(characterDetail) {
     console.log("Getting Character Detail Data");
     console.log(characterDetail);
@@ -102,7 +104,8 @@ function getComicData() {
       apiKey +
       "&hash=" +
       hash,
-    method: "GET"
+    method: "GET",
+    global: false
   }).then(function(comic) {
     console.log("Getting Character Comic Data");
     console.log(comic);
