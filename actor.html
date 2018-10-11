@@ -46,65 +46,63 @@
 
   </div>
 
-     <!-- profile page  -->
-    <div class="container-fluid" id="profile-container">
-      <div class="row">
-        <div class="col-xl-6">
+  <!-- profile page  -->
+  <div class="container-fluid" id="profile-container">
+    <div class="row">
+      <div class="col-xl-6">
 
-          <nav class="navbar nav-fixed navbar-expand-lg navbar">
-            <span class="navbar-brand main-title" id="secret-text-3"><a href="index.html">The Secret Files</a> </span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav class="navbar nav-fixed navbar-expand-lg navbar">
+          <span class="navbar-brand main-title" id="secret-text-3"><a href="index.html">The Secret Files</a> </span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <form class="form-inline ml-auto">
-                <input type="text" id="search-box-nav" placeholder="Captain America">
-                <button class="search-btn-small" id="search-btn-nav">Search</button>
-              </form>
-            </div>
-          </nav>
-          <!-- image pane -->
-          <div class="img-overlay"></div>
-          <div class="d-flex justify-content-center" id="profile-banner">
-            <div class='character-content'>
-
-              <div class="justify-content-center main-image" src="" alt="" id="actor-profile-image"></div>
-              <p id="actor-name"></p>
-              <p id="birthday"></p>
-              <p id="place-of-birth"></p>
-              <h4>Plays</h4>
-              <hr class="hr-white">
-              <p id="actor-character-name">Character Name</p>
-            </div>
+            <form class="form-inline ml-auto">
+              <input type="text" id="search-box-nav" placeholder="Captain America">
+              <button class="search-btn-small" id="search-btn-nav">Search</button>
+            </form>
           </div>
-        </div>
-        <div class="col-xl-6">
-          <!-- details pane -->
-          <div class="info-panel">
+        </nav>
+        <!-- image pane -->
+        <div class="img-overlay"></div>
+        <div class="d-flex justify-content-center" id="profile-banner">
+          <div class='character-content'>
 
-            <h4>Bio</h4>
-            <p id="actor-bio"></p>
-          </div>
-
-          <div class="info-panel">
-            <h4>Comics</h4>
-            <div class="flex-display" id="comic-images"></div>
-          </div>
-
-          <div class="info-panel">
-            <h4>Events</h4>
-            <div class="flex-display" id="event-images"></div>
+            <div class="justify-content-center main-image" src="" alt="" id="actor-profile-image"></div>
+            <p class="marvel-font" id="actor-name"></p>
+            <p id="birthday"></p>
+            <p id="place-of-birth"></p>
+            <h4>Plays</h4>
+            <hr class="hr-white">
+            <p class="red-link" id="actor-character-name">Character Name</p>
           </div>
         </div>
       </div>
-      <!-- Custom JS -->
-      <script data-main="scripts/config" src="scripts/require.js">
+      <div class="col-xl-6">
+        <!-- details pane -->
+        <div class="info-panel">
+
+          <h4 class="marvel-font">Bio</h4>
+          <hr class="section-divider">
+          <p id="actor-bio"></p>
+        </div>
+
+        <div class="info-panel">
+          <h4 class="marvel-font">Known For</h4>
+          <hr class="section-divider">
+          <div class="flex-display" id="known-images"></div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Custom JS -->
+    <script data-main="scripts/config" src="scripts/require.js">
 
 
-      </script>
+    </script>
 
 </body>
 

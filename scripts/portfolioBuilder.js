@@ -2,8 +2,25 @@
 
 function buildCharacterPage() {
   $("#profile-image").attr("src", sessionStorage.characterImage);
-  $("#character-name").text(sessionStorage.characterName);
-  $("#character-bio").text(sessionStorage.characterDescription);
+  if (sessionStorage.characterName.match(/[()]+/) !== null) {
+    //get the two names
+    let namesArray = sessionStorage.characterName.split(/[()]+/).filter(function (e) {
+      return e;
+    });
+
+    sessionStorage.characterName = namesArray[0];
+    sessionStorage.alias = namesArray[1];
+    $("#character-name").text(sessionStorage.characterName);
+    $("#alias").text(sessionStorage.alias);
+
+  } else {
+
+    $("#character-name").text(sessionStorage.characterName);
+  }
+  if (sessionStorage.characterDescription !== "") {
+
+    $("#character-bio").text(sessionStorage.characterDescription);
+  }
 
   getCharacterDetailData();
 
@@ -17,7 +34,7 @@ function actorDropdown() {
   for (let i = 0; i < characterObject.actor.length; i++) {
     let option = $("<p>");
     option.attr("id", characterObject.actor[i]);
-    option.attr('class', "actor");
+    option.attr('class', "actor red-link");
     option.text(characterObject.actor[i]);
     option.val(characterObject.actor[i]);
 
@@ -35,7 +52,5 @@ function buildActorPage() {
   $("#actor-bio").text(bio);
   $("#actor-profile-image").css('background-image', 'url(' + profileImage + ')');
   $("#profile-banner").css('background-image', 'url(' + actorImgPoster + ')');
-
-  //get the actor info from tmdb
 
 }

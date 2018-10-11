@@ -40,7 +40,7 @@ function getTMDBTVInfo() {
         if (tmdbTVList.cast[i].character.includes("/")) {
           splitNames = tmdbTVList.cast[i].character.split("/");
 
-          if (splitNames[0].includes(selectedCharacter)) {
+          if (splitNames[1].indexOf(sessionStorage.characterName) > -1) {
             let characterName = splitNames[0].trim();
 
             let actorName = tmdbTVList.cast[i].name;
@@ -49,7 +49,7 @@ function getTMDBTVInfo() {
               Object.values(characterObject).indexOf(actorName);
               characterObject["actor"].unshift(actorName);
             }
-          } else if (splitNames[1].includes(selectedCharacter)) {
+          } else if (splitNames[1].indexOf(sessionStorage.characterName) > -1) {
             let characterName = splitNames[1].trim();
             let actorName = tmdbTVList.cast[i].name;
             characterObject["character"] = characterName;
@@ -59,7 +59,7 @@ function getTMDBTVInfo() {
             }
           }
         } else {
-          if (tmdbTVList.cast[i].character.includes(selectedCharacter)) {
+          if (tmdbTVList.cast[i].character.includes(sessionStorage.characterName)) {
             let characterName = tmdbTVList.cast[i].character;
             let actorName = tmdbTVList.cast[i].name;
 
@@ -95,7 +95,7 @@ function getTMDBMovieInfo() {
         if (tmdbMovieList.cast[i].character.includes("/")) {
           splitNames = tmdbMovieList.cast[i].character.split("/");
 
-          if (splitNames[0].indexOf(selectedCharacter) > -1) {
+          if (splitNames[0].indexOf(sessionStorage.characterName) > -1) {
             let characterName = splitNames[0].trim();
 
             let actorName = tmdbMovieList.cast[i].name;
@@ -105,7 +105,7 @@ function getTMDBMovieInfo() {
               Object.values(characterObject).indexOf(actorName);
               characterObject["actor"].unshift(actorName);
             }
-          } else if (splitNames[1].indexOf(selectedCharacter) > -1) {
+          } else if (splitNames[1].indexOf(sessionStorage.characterName) > -1) {
             let characterName = splitNames[1].trim();
             let actorName = tmdbMovieList.cast[i].name;
             characterObject["character"] = characterName;
@@ -116,7 +116,7 @@ function getTMDBMovieInfo() {
             }
           }
         } else {
-          if (tmdbMovieList.cast[i].character.indexOf(selectedCharacter) > -1) {
+          if (tmdbMovieList.cast[i].character.indexOf(sessionStorage.characterName) > -1) {
             let characterName = tmdbMovieList.cast[i].character;
             let actorName = tmdbMovieList.cast[i].name;
 
@@ -151,6 +151,22 @@ function getActorId() {
     console.log(result)
     actorID = result.results[0].id;
     actorImgPoster = imageUrl + result.results[0].known_for[0].poster_path;
+
+    for (let j = 0; j < result.results[0].known_for.length; j++) {
+      let typeWrapper = $("<div class='comic-wrapper'>");
+      let typeName = $("<p>");
+      let typeImage = $("<img>");
+
+      typeImage.attr("class", "comic-container");
+
+      typeImage.attr("src", imageUrl + result.results[0].known_for[j].backdrop_path);
+
+      typeName.attr("class", "comic-name");
+      typeName.text(result.results[0].known_for[j].original_title);
+      typeImage.attr("comic-id", result.results[0].known_for[j].original_title);
+      typeWrapper.append(typeImage, typeName);
+      $("#known-images").append(typeWrapper);
+    }
     getActorInfo();
   });
 }
@@ -175,6 +191,9 @@ function getActorInfo() {
     bio = result.biography;
     placeOfBirth = result.place_of_birth;
     profileImage = imageUrl + result.profile_path;
+
+
+
 
     buildActorPage();
   });

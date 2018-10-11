@@ -35,7 +35,7 @@ function getCharacterData() {
       typeName.attr("class", "character-name");
       typeName.text(character.data.results[i].name);
       typeImage.attr("character-id", character.data.results[i].id);
-      typeWrapper.append(typeName, typeImage);
+      typeWrapper.append(typeImage, typeName);
       $("#results-row").append(typeWrapper);
     }
   });

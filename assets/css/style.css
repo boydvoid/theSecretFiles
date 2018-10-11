@@ -41,6 +41,10 @@ ul {
   z-index: 1030;
 }
 
+a {
+  color: #ffffff;
+}
+
 /*
 --------------
 Navbar
@@ -132,6 +136,11 @@ Main Container
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+#search-box-nav {
+  padding: 2px;
+  border: none;
+}
+
 .search-btn {
   background-color: #ed1d24;
   position: relative;
@@ -204,9 +213,7 @@ Search Content
 .event-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   height: 140px;
   width: 100px;
   /* overflow: scroll; */
@@ -215,8 +222,6 @@ Search Content
 }
 
 .character-name {
-  font-size: 16px !important;
-  margin-top: 30px !important;
   width: 250px !important;
 }
 
@@ -230,18 +235,18 @@ Search Content
   white-space: nowrap;
   width: 190px;
   color: #333;
-  margin-top: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 10px !important;
+  text-transform: uppercase;
 }
 
 .comic-wrapper,
-.event-wrapper{
+.event-wrapper {
   margin-right: 20px;
 }
 
 .marvel-font {
   font-family: MarvelFont, sans-serif;
-  font-size: 3em;
+  font-size: 1em;
 }
 
 .section-divider {
@@ -295,6 +300,21 @@ Profile Page
 ---------------
 */
 
+#character-name {
+  font-size: 2em;
+}
+
+.red-link {
+  background-color: #ed1d24;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.red-link:hover {
+  background-color: #8f1519;
+  border-radius: 10px;
+}
+
 .img-overlay {
   height: 100vh;
   width: 100%;
@@ -347,6 +367,16 @@ Profile Page
 #actor-character-name {
   font-size: 20px;
 
+}
+
+#actor-profile-image {
+  background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/hMp5y4Nro5pv4Nawyt3Ld9TsKfO.jpg);
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#actor-name {
+  font-size: 2em;
 }
 
 .info-panel {
