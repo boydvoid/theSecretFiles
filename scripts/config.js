@@ -3,9 +3,11 @@
 //   path: {}
 // });
 require(["globalVariables"]);
-require(["searchBtnClick"]);
 require(["ajaxComplete"]);
 require(["ajaxStart"]);
+require(["searchBtnClick"]);
+require(["portfolioPage"]);
+require(["imageClicks"]);
 require(["marvel"]);
 require(["tmdb"]);
 require(["documentReady"]);

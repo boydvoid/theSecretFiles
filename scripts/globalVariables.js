@@ -5,8 +5,8 @@ let marvelURL = "https://gateway.marvel.com:443/v1/public/characters";
 let searchLimit = 50;
 let extension;
 
-// Character Specific
-let searchInput;
+//get the search value from session storage
+let searchInput = sessionStorage.searchVal;
 let characterID;
 let characterName;
 let characterImage;
@@ -14,10 +14,13 @@ let characterDescription;
 let characterFirstAppearance;
 let firstIssue;
 let characterCreators = [];
-
-// TMDB API
+let selectedCharacter = sessionStorage.characterName;
+let splitNames;
 let tmdbAPIKey = "3433c648bbd9030f976ba13594b4aacb";
 let tmdbURL = "https://api.themoviedb.org/3/";
 let marvelMovieList = [];
 let marvelTVList = [];
-let characterList;
+let characterObject = {
+  character: "",
+  actor: []
+};

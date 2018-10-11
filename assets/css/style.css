@@ -51,7 +51,6 @@ Main Container
 */
 
 #homepage-div {
-  display: block;
   overflow: hidden;
 }
 .main-title {
@@ -144,7 +143,9 @@ Search Content
   transition: all 0.5s ease;
 }
 
-.image-container, .comic-container, .event-container {
+.image-container,
+.comic-container,
+.event-container {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
   height: 250px;
@@ -194,7 +195,6 @@ Results Page
 */
 
 #results-div {
-  display: none;
   overflow: auto;
 }
 
@@ -216,9 +216,6 @@ Profile Page
   z-index: 2;
   background-color: #000000c2;
 }
-#profile-container {
-  display: none;
-}
 #profile-banner {
   background-image: url("https://img00.deviantart.net/395c/i/2014/066/1/d/fantastic_4_banner_by_smlshin-d79byr6.jpg");
 }
@@ -234,6 +231,7 @@ Profile Page
   margin-bottom: 40px;
   margin-top: 40px;
   position: relative;
+  border: 8px solid white;
   z-index: 3;
 }
 
@@ -261,4 +259,10 @@ Profile Page
   margin: 20px;
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#actor-select {
+  height: 30px;
+  position: relative;
+  top: 120px;
+  left: 10px;
 }
