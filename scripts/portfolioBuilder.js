@@ -6,8 +6,7 @@ function buildCharacterPage() {
   $("#character-bio").text(sessionStorage.characterDescription);
 
   getCharacterDetailData();
-  getComicData();
-  getEventData();
+
 }
 
 //run after tmdb is done
@@ -16,11 +15,27 @@ function actorDropdown() {
     $("#actor-select").empty();
   }
   for (let i = 0; i < characterObject.actor.length; i++) {
-    let option = $("<option>");
+    let option = $("<p>");
     option.attr("id", characterObject.actor[i]);
+    option.attr('class', "actor");
     option.text(characterObject.actor[i]);
     option.val(characterObject.actor[i]);
 
-    $("#actor-select").prepend(option);
+    $(".info-panel").append(option);
   }
+}
+
+//build the actor page 
+function buildActorPage() {
+
+  $("#character-name").text(sessionStorage.characterName);
+  $("#actor-name").text(sessionStorage.actorName);
+  $("#birthday").text(birthday);
+  $("#place-of-birth").text(placeOfBirth);
+  $("#actor-bio").text(bio);
+  $("#actor-profile-image").css('background-image', 'url(' + profileImage + ')');
+  $("#profile-banner").css('background-image', 'url(' + actorImgPoster + ')');
+
+  //get the actor info from tmdb
+
 }

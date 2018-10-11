@@ -3,7 +3,10 @@ function getTMDBList() {
     cache: true,
     url: tmdbURL + "list/92826?api_key=" + tmdbAPIKey + "&language=en-US",
     method: "GET",
-    global: false
+    global: false,
+    error: function (request, status, error) {
+      console.log("tmdblist" + request);
+    }
   }).then(function (tmdbList) {
     for (let i = 0; i < tmdbList.items.length; i++) {
       if (tmdbList.items[i].media_type === "movie") {
@@ -28,7 +31,10 @@ function getTMDBTVInfo() {
       cache: true,
       url: tmdbURL + "tv/" + tvID + "/credits?api_key=" + tmdbAPIKey + "&language=en-US",
       method: "GET",
-      global: false
+      global: false,
+      error: function (request, status, error) {
+        console.log("tmdbtvinfo" + request);
+      }
     }).then(function (tmdbTVList) {
       for (let i = 0; i < tmdbTVList.cast.length; i++) {
         if (tmdbTVList.cast[i].character.includes("/")) {
@@ -80,9 +86,12 @@ function getTMDBMovieInfo() {
       cache: true,
       url: tmdbURL + "movie/" + movieID + "/credits?api_key=" + tmdbAPIKey + "&language=en-US",
       method: "GET",
-
+      error: function (request, status, error) {
+        console.log("tmdbmovieinfo" + request);
+      }
     }).then(function (tmdbMovieList) {
       for (let i = 0; i < tmdbMovieList.cast.length; i++) {
+
         if (tmdbMovieList.cast[i].character.includes("/")) {
           splitNames = tmdbMovieList.cast[i].character.split("/");
 
@@ -125,4 +134,48 @@ function getTMDBMovieInfo() {
       }
     });
   }
+}
+
+
+//get actor name
+function getActorId() {
+  $.ajax({
+    cache: true,
+    url: tmdbURL + "search/person?api_key=" + tmdbAPIKey + "&language=en-US" + "&query=" + selectedPerson + "&page=1",
+    method: 'GET',
+    error: function (request, status, error) {
+      console.log("getactorid" + request);
+    }
+
+  }).then(function (result) {
+    console.log(result)
+    actorID = result.results[0].id;
+    actorImgPoster = imageUrl + result.results[0].known_for[0].poster_path;
+    getActorInfo();
+  });
+}
+
+function getActorInfo() {
+  $.ajax({
+    cache: true,
+    url: tmdbURL + "person/" + actorID + "?api_key=" + tmdbAPIKey + "&language=en-US",
+    method: 'GET',
+    error: function (request, status, error) {
+      console.log("actor-info" + JSON.stringify(error));
+    },
+    success: function () {
+      setTimeout(function () {
+        $("#loading-wrapper").css({
+          left: "-100%"
+        });
+      }, 3000)
+    }
+  }).then(function (result) {
+    birthday = result.birthday;
+    bio = result.biography;
+    placeOfBirth = result.place_of_birth;
+    profileImage = imageUrl + result.profile_path;
+
+    buildActorPage();
+  });
 }

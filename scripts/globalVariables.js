@@ -24,3 +24,11 @@ let characterObject = {
   character: "",
   actor: []
 };
+let actorID;
+let selectedPerson = sessionStorage.actorName;
+let actorImgPoster;
+let imageUrl = "https://image.tmdb.org/t/p/w600_and_h900_bestv2"
+let birthday;
+let bio;
+let profileImage;
+let placeOfBirth;
