@@ -10,6 +10,7 @@ let searchInput = sessionStorage.searchVal;
 let characterID;
 let characterName;
 let characterImage;
+let banner;
 let characterDescription;
 let characterFirstAppearance;
 let firstIssue;
@@ -24,6 +25,7 @@ let characterObject = {
   character: "",
   actor: []
 };
+//actor
 let actorID;
 let selectedPerson = sessionStorage.actorName;
 let actorImgPoster;

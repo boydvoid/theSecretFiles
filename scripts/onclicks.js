@@ -18,11 +18,15 @@ define([], function () {
 
 
   //actor name click
+  $(document).on('click', '#actor-character-name', function (e) {
+    sessionStorage.searchVal = $(e.target).text();
+    window.location.href = "results.html"
+  })
+  //actor name click
   $(document).on('click', '.actor', function () {
     sessionStorage.actorName = this.id;
     window.location.href = "actor.html"
   })
-
   //onclick for the images
   $(document).on("click", ".image-container", function () {
     characterID = $(this).attr("character-id");
