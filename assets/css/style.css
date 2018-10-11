@@ -179,7 +179,7 @@ Search Content
   width: 250px;
 }
 
-.character-name {
+.character-name, .comic-name, .event-name {
   font-size: 16px;
   font-weight: 700;
   overflow: hidden;
