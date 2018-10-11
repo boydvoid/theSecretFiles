@@ -179,7 +179,9 @@ Search Content
   width: 250px;
 }
 
-.character-name, .comic-name, .event-name {
+.character-name,
+.comic-name,
+.event-name {
   font-size: 16px;
   font-weight: 700;
   overflow: hidden;
@@ -237,7 +239,7 @@ Profile Page
 */
 
 .img-overlay {
-  height: 280px;
+  height: 301px;
   width: 100%;
   position: absolute;
   top: 56px;
@@ -247,7 +249,9 @@ Profile Page
 }
 
 #profile-banner {
-  background-image: url("https://img00.deviantart.net/395c/i/2014/066/1/d/fantastic_4_banner_by_smlshin-d79byr6.jpg");
+  background-color: #ed1d24;
+  background-size: cover;
+  background-position: center center;
 }
 
 #banner-info {
@@ -255,15 +259,17 @@ Profile Page
   z-index: 3;
 }
 
-#profile-image {
+.main-image {
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   margin-top: 40px;
   position: relative;
   border: 8px solid white;
   z-index: 3;
+  background-size: cover;
+  background-position: center center;
 }
 
 #character-name {

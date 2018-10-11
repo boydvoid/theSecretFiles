@@ -3,11 +3,8 @@
 //   path: {}
 // });
 require(["globalVariables"]);
-require(["slideshow"]);
-
-require(["searchBtnClick"]);
-require(["portfolioPage"]);
-require(["imageClicks"]);
+require(["onclicks"]);
+require(["portfolioBuilder"]);
 require(["marvel"]);
 require(["tmdb"]);
 require(["documentReady"]);
