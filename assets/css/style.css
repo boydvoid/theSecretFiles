@@ -1,0 +1,508 @@
+/*
+--------------
+Global
+--------------
+*/
+
+@font-face {
+  font-family: 'MarvelFont';
+  src: url('../font/AVENGEANCE HEROIC AVENGER.ttf');
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #c7c7c72b;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-fixed {
+  padding-right: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 50%;
+  z-index: 1030;
+}
+
+a {
+  color: #ffffff;
+}
+
+/*
+--------------
+Navbar
+--------------
+*/
+
+#page-navbar {
+  display: none;
+}
+
+/*
+--------------
+Overlay
+--------------
+*/
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000052;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+/*
+--------------
+Main Container
+--------------
+*/
+
+#homepage-div {
+  overflow: hidden;
+}
+
+.username-p {
+  color: #ffffff;
+  position: fixed;
+  z-index: 4;
+  right: 86px;
+}
+
+#modal-open {
+  display: block;
+  position: fixed;
+  z-index: 5;
+  right: 10px;
+}
+
+#logout-btn {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  right: 10px;
+}
+
+.main-title {
+  font-family: MarvelFont, sans-serif;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #ffffff !important;
+  z-index: 10;
+}
+
+#secret-text-home {
+  font-size: 10em;
+}
+
+#files-text {
+  left: 0;
+  top: 0;
+}
+
+#top-row {
+  position: relative;
+  z-index: 2;
+  margin-top: 30vh;
+  color: #ffffff;
+}
+
+#description {
+  font-size: 1.3em;
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  width: 50%;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+.search-box-div {
+  position: absolute;
+  right: 305px;
+  top: 70%;
+  width: 63%;
+  transition: all 0.5s ease;
+}
+
+#search-box {
+  position: relative;
+  height: 50px;
+  width: 50%;
+  padding: 10px;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  border: none;
+  transition: all 0.5s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#search-box-nav {
+  padding: 2px;
+  border: none;
+}
+
+.search-btn {
+  background-color: #ed1d24;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  min-height: 50px;
+  transition: all 0.5s ease;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.search-btn-small {
+  font-weight: 500;
+  color: #FFF;
+  background-color: #ed1d24;
+  position: relative;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  min-height: 30px;
+  transition: all 0.5s ease;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.search-btn-small:hover {
+  background-color: #8f1519;
+  border-radius: 10px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*
+--------------
+Search Content
+--------------
+*/
+
+.username-results {
+  color: #ffffff;
+  position: relative;
+  z-index: 4;
+  /* right: 86px; */
+  display: inherit;
+  top: 6px;
+}
+
+.username-page {
+
+  position: relative;
+  z-index: 4;
+  /* right: 86px; */
+  display: inherit;
+  top: 6px;
+}
+
+.flex-display {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  z-index: 3;
+  text-align: center;
+}
+
+.flex-display:hover {
+  overflow: auto;
+}
+
+.images {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.image-container {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  cursor: pointer;
+  height: 250px;
+  margin-right: 20px;
+  width: 250px;
+}
+
+.comic-container,
+.event-container {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  height: 240px;
+  width: 200px;
+  /* overflow: scroll; */
+  text-align: center;
+
+}
+
+.character-name {
+  font-size: 14px !important;
+  margin-top: 10px;
+  width: 250px !important;
+}
+
+.character-name,
+.comic-name,
+.event-name {
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 215px;
+  color: #333;
+  margin-bottom: 10px !important;
+  text-transform: uppercase;
+}
+
+.comic-name,
+.event-name {
+  margin-top: 20px;
+  font-size: 0.8em;
+}
+
+.comic-wrapper,
+.event-wrapper {
+  margin-right: 20px;
+}
+
+.marvel-font {
+  font-family: MarvelFont, sans-serif;
+  font-size: 2em;
+  letter-spacing: 1.4px;
+}
+
+.section-divider {
+  margin-bottom: 40px;
+}
+
+/* 
+---------------
+Loading
+---------------
+*/
+
+#loading-wrapper {
+  background-color: #d8d8d8;
+  height: 100%;
+  width: 100%;
+  opacity: 1 !important;
+  z-index: 9999;
+  transition: all 0.2s ease;
+  position: fixed;
+  top: 0;
+  left: 0%;
+}
+
+#loading-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* 
+---------------
+Results Page
+---------------
+*/
+
+#results-div {
+  overflow: auto;
+}
+
+#results-row {
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+/* 
+---------------
+Profile Page
+---------------
+*/
+
+.red-link {
+  background-color: #ed1d24;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all .5s ease;
+}
+
+.red-link:hover {
+  background-color: #8f1519;
+  border-radius: 10px;
+}
+
+.img-overlay {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: #0000009e;
+}
+
+#profile-banner {
+  position: relative;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hr-white {
+  border: 2px solid white;
+}
+
+#banner-info {
+  position: relative;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+}
+
+.main-image {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 15px;
+  margin-top: 40px;
+  position: relative;
+  border: 8px solid white;
+  z-index: 4;
+  background-size: cover;
+  background-position: center center;
+}
+
+.character-content {
+  position: relative;
+  z-index: 4;
+  color: #ffffff;
+}
+
+.info-panel {
+  margin: 20px;
+  padding: 10px;
+
+}
+
+
+#actor-character-name {
+  font-size: 20px;
+
+}
+
+#actor-profile-image {
+  background-image: url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/hMp5y4Nro5pv4Nawyt3Ld9TsKfO.jpg);
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#actor-name {
+  font-size: 4em;
+}
+
+#character-name {
+  font-size: 4em;
+}
+
+#marvel-logo {
+  width: 25%;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+
+}
+
+#first-appearance,
+#creators{
+  font-weight: 500;
+}
+
+/*
+---------------
+Media Queries
+---------------
+*/
+
+#fav-btn {
+  display: none;
+  position: relative;
+  z-index: 5;
+  right: 100px;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    overflow: auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #secret-text-home {
+    font-size: 5em;
+  }
+
+  #description {
+    width: 100%;
+  }
+
+  #results-row {
+    margin-left: 17%;
+  }
+
+}

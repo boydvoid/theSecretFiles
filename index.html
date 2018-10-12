@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+	
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+	<!-- Bootstrap -->
+	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity = "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin = "anonymous">
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin = "anonymous"></script>
+	<script
+			src = "https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity = "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin = "anonymous"></script>
+	<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin = "anonymous"></script>
+	
+	<!-- Custom CSS -->
+	<link rel = "stylesheet" href = "assets/css/style.css">
+	
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	
+	<title>The Secret Files</title>
+
+</head>
+
+<body>
+
+<div id = "homepage-div">
+	<p class="username-p">Hello, <span id="username">Username</span></p>
+		<button type="button" class="red-link" id="modal-open" data-toggle="modal" data-target="#myModal">Login/Register</button>
+		<button type="button" class="red-link" id="logout-btn">Logout</button>
+
+ <!-- Modal -->
+ <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login/Register</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+					<form>
+						<input type="email" id="email" placeholder="Email">
+						<input type="password" id="password" placeholder="Password">
+						<button type="submit" id="login-btn">Login</button>
+					</form>
+        </div>
+        <div class="modal-footer">
+					<p>Want to register with the entered data?</p>
+          <button type="button" class="red-link" id="register-btn">Register</button>
+        </div>
+      </div>
+      
+    </div>
+	</div>
+	
+
+	<!-- overlay -->
+	<div class = "overlay"></div>
+	<!-- video -->
+	<video autoplay muted id = "myVideo">
+	</video>
+	<!-- Content -->
+	<div class = "container" id = "main-container">
+		<div class = "row" id = "top-row">
+			<div class = "col-xl-12">
+				<h2 class = "main-title" id = "secret-text-home">The Secret </br>Files</h2>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "col-xl-12">
+				
+				<p id = "description">
+					Search for a Marvel Comic's character and see their profile. 
+				</p>
+				<form id = "homepage-search-form">
+					<input type = "text" id = "search-box" placeholder = "Captain America">
+					<button  class="search-btn" type = "submit" id = "search-btn">Search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+>
+<!-- Custom JS -->
+<script data-main="scripts/config" src="scripts/require.js">
+
+	
+</script>
+
+</body>
+
+</html>
