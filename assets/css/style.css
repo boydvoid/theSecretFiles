@@ -17,7 +17,7 @@ body {
   background-color: #c7c7c72b;
   font-family: 'Roboto', sans-serif;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ul {
@@ -41,6 +41,10 @@ ul {
 
 a {
   color: #ffffff;
+}
+
+.button-spacer {
+  margin-top: 10px;
 }
 
 /*
@@ -82,9 +86,7 @@ Main Container
   color: #ffffff;
   position: fixed;
   z-index: 4;
-  right: 160px;
-  font-family: monospace;
-  font-size: 20px;
+  left: 10px;
 }
 
 #modal-open {
@@ -99,7 +101,6 @@ Main Container
   position: fixed;
   z-index: 5;
   right: 10px;
- 
 }
 
 .main-title {
@@ -165,7 +166,6 @@ Main Container
 
 .search-btn {
   background-color: #ed1d24;
-
   position: relative;
   z-index: 2;
   border: none;
@@ -198,7 +198,7 @@ Main Container
 
 .search-btn-small:hover {
   background-color: #8f1519;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 #myVideo {
@@ -221,17 +221,13 @@ Search Content
   z-index: 4;
   /* right: 86px; */
   display: inherit;
-  top: 6px;
 }
 
 .username-page {
-
   position: relative;
   z-index: 4;
   /* right: 86px; */
   display: inherit;
-  font-family: monospace;
-  top: 6px;
 }
 
 .flex-display {
@@ -312,7 +308,7 @@ Search Content
 }
 
 .section-divider {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* 
@@ -375,7 +371,7 @@ Profile Page
 }
 
 .img-overlay {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: 2;
@@ -424,11 +420,8 @@ Profile Page
 }
 
 .info-panel {
-  margin: 20px;
   padding: 10px;
-
 }
-
 
 #actor-character-name {
   font-size: 20px;
