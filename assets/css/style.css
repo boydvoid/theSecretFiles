@@ -17,7 +17,7 @@ body {
   background-color: #c7c7c72b;
   font-family: 'Roboto', sans-serif;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ul {
@@ -41,6 +41,10 @@ ul {
 
 a {
   color: #ffffff;
+}
+
+.button-spacer {
+  margin-top: 10px;
 }
 
 /*
@@ -82,7 +86,7 @@ Main Container
   color: #ffffff;
   position: fixed;
   z-index: 4;
-  right: 86px;
+  left: 10px;
 }
 
 #modal-open {
@@ -217,16 +221,13 @@ Search Content
   z-index: 4;
   /* right: 86px; */
   display: inherit;
-  top: 6px;
 }
 
 .username-page {
-
   position: relative;
   z-index: 4;
   /* right: 86px; */
   display: inherit;
-  top: 6px;
 }
 
 .flex-display {
@@ -307,7 +308,7 @@ Search Content
 }
 
 .section-divider {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* 
@@ -370,7 +371,7 @@ Profile Page
 }
 
 .img-overlay {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: 2;
@@ -419,11 +420,8 @@ Profile Page
 }
 
 .info-panel {
-  margin: 20px;
   padding: 10px;
-
 }
-
 
 #actor-character-name {
   font-size: 20px;
