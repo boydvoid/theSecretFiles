@@ -175,7 +175,7 @@ function getComicData() {
 
 			'background-image': 'url(' + banner + ')',
 			"position": "relative",
-			"max-height": "100vh",
+			"max-height": "100vh !important",
 			"align-items": "center",
 			"text-align": "center",
 			"background-size": "cover",
