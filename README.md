@@ -9,8 +9,3 @@
   -TMDB Api
   -Require JS
 
-### Contributors
-  -Bobby Boyd
-  -Ricky Van Horn
-  -Julian Rambob
-  -Stephanie Galindo
